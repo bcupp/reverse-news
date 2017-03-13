@@ -23,3 +23,19 @@ app.directive('searchNav', function(){
     templateUrl:"partials/searchNav.html"
   };
 });
+
+app.directive('spacer', function(){
+  return{
+    restrict:'EAC',
+    replace: true,
+    templateUrl:"partials/spacer.html"
+  };
+});
+
+app.directive('bottomFooter', function(){
+  return{
+    restrict:'EACM',
+    replace: false,
+    templateUrl:"partials/bottomFooter.html"
+  };
+});
