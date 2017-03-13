@@ -13,15 +13,15 @@ function returnNews(){
 }
 //call to newsAPI
 function getNews() {
-$http({
+var promise = $http({
   method:'GET',
   url: 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=7d72f4db8ee04e39a305e785477b413b'
 }).then(function sucessfullCallback(response){
   console.log(response.data);
-  newsQueue = response.data;
+  return newsQueue = response.data.articles;
 });
-
-});
+return promise;
+}
 
 
 });
