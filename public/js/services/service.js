@@ -18,7 +18,7 @@ var promise = $http({
   url: 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=7d72f4db8ee04e39a305e785477b413b'
 }).then(function sucessfullCallback(response){
   console.log(response.data);
-  return newsQueue = response.data;
+  return newsQueue = response.data.articles;
 });
 return promise;
 }

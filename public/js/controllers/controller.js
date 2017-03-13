@@ -1,13 +1,12 @@
 var app = angular.module('myMod');
 
 app.controller('controller1', function($scope, newService){
-
+$scope.displayedNewsPromise = [];
 //handoff from factory
 
-$scope.displayedNews = newService.getNews()
-.then(function(resultOfPromise) {
-var displayedNewsPromise = resultOfPromise;
-   console.log(displayedNewsPromise);
+newService.getNews().then(function(resultOfPromise) {
+ $scope.displayedNewsPromise = resultOfPromise;
+   console.log($scope.displayedNewsPromise);
 
  });
 
