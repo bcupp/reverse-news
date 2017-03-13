@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app='myMod'>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,9 +11,11 @@
 
 </head>
 
-  <body ng-app='myMod'>
 
-    <div class="container-fluid">
+  <body ng-app='myMod' ng-controller='controller1'>
+    <h1>Hello!</h1>
+    <p> {{displayedNewsPromise[0].title}} </p>
+    <div class= 'container-fluid'>
     <jumbotron></jumbotron>
     <search-nav></search-nav>
     <content-block></content-block>
@@ -21,9 +23,25 @@
 
 
 
+
       <ng-view></ng-view>
     <spacer></spacer>
-    <bottom-footer></botto-mfooter>
+    <bottom-footer></bottomfooter>
+
+
+      <div class='spacer'>
+      <div class='col-md-12'>
+      </div>
+      </div>
+
+      <div class ='footer-nav'>
+      <div class='footer'>
+      <div class='col-md-12'>
+      </div>
+      </div>
+      </div>
+
+
 
 
   </body>
@@ -35,6 +53,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-<script src="js/script.js"></script>
+
+<script src='js/modules/module.js'></script>
+<script src='js/modules/config.js'></script>
 <script src='js/directives/customDirectives.js'></script>
+
+<script src='js/controllers/controller.js'></script>
+<script src='js/services/service.js'></script>
+<script src='js/script.js'></script>
+
 </html>
