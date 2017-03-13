@@ -7,7 +7,7 @@ app.controller('controller1', function($scope, newService){
 $scope.displayedNews = newService.getNews()
 .then(function(resultOfPromise) {
 var displayedNewsPromise = resultOfPromise;
-   console.log(displayedNewsPromise)
+   console.log(displayedNewsPromise);
 
  });
 
