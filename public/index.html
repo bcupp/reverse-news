@@ -6,14 +6,41 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <title>Reverse News</title>
-</head>
-<body>
 
-</body>
+  <title>Reverse News</title>
+
+</head>
+
+  <body ng-app='myMod'>
+
+    <div class="container-fluid">
+    <jumbotron></jumbotron>
+    <search-nav></search-nav>
+    <content-block></content-block>
+    </div>
+
+      <div class="spacer">
+      <div class="col-md-12">
+      </div>
+      </div>
+
+      <div class ="footer-nav">
+      <div class="footer">
+      <div class="col-md-12">
+      </div>
+      </div>
+      </div>
+
+      <ng-view></ng-view>
+  </body>
+
+
+
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js'></script>
-<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src='js/script.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="js/script.js"></script>
+<script src='js/directives/customDirectives.js'></script>
 </html>

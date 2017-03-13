@@ -1,0 +1,20 @@
+.col-md-3{
+  border: 1px solid black;
+}
+
+.footer{
+  background-color: black;
+  padding: 3.5%;
+}
+
+.spacer{
+  padding: 2%;
+}
+
+.header{
+  background-color: black;
+  padding: 2%;
+}
+.spacer-2{
+  padding:1%;
+}
