@@ -3,18 +3,25 @@
 
   <div class="row"  ng-repeat= "article in displayedNewsPromise">
     <div class = "thumbnail">
+      <!-- saving for later just in case -->
+      <!-- 1 is our original and 2 is the ajax call
+            The interesting part is even in the repeat, it only uses one image-->
      <!--<a class="popout" href="{{article.url}}"><img class = "picture" src = "{{article.urlToImage}}"/> </a> -->
     <!-- <a data-fancybox data-type="ajax" data-src="{{article.url}}" data-selector="#two" href="javascript:;"><img class = "picture" src = "{{article.urlToImage}}"/></a> -->
- <a data-fancybox data-src="#hidden-content-1" href="javascript:;" class="btn">Open demo</a>
- <div style="display: none;" id="hidden-content-1">
- <h2>Hello!</h2>
- <p>You are awesome!</p>
-</div>
+<!-- <a data-fancybox data-src="#hidden-content-1" href="javascript:;" class="btn">Open demo</a> -->
+<!-- This makes it appear once for every box. Maybe a custom directive is necessary  -->
+<!-- <a data-fancybox data-src="#hidden-content-1" href="javascript:;" ><img class = "picture" src = "{{article.urlToImage}}"/> </a>
+<div style="display: none;" id="hidden-content-1">
+<h3> {{article.url}} </h3>
+</div> -->
     <h2>{{article.source}}</h2>
     <h3 class = "title">{{article.title}}</h3>
     <i class = "authorTime" >{{article.author}}</i>
     <p> {{article.description}}  </p>
-
+    <a data-fancybox data-src="#hidden-content-1" href="javascript:;"><img class = "picture" src = "{{article.urlToImage}}"/> </a>
+    <div style="display: none;" id="hidden-content-1">
+    <img class = "picture" src = "{{article.urlToImage}}"/>
+    </div>
   </div>
 
 
