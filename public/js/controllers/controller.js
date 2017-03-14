@@ -15,7 +15,7 @@ app.controller('controller1', function($scope, newService, $location) {
         newsFeed = newsFeed.concat(resultOfPromise);
     });
 
-    
+
     // emailjs.send("mailjet","template_Fj79lA9W",{name: "James", notes: "Check this out!"})
     // .then(function(response) {
     //    console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
@@ -26,8 +26,12 @@ app.controller('controller1', function($scope, newService, $location) {
     function newsArray(userInput) {
         var reverseFilter = [];
         var normFilter = [];
+        var count = 0;
 
         newsFeed.forEach(function(article) {
+            article.id = "id"+count;
+            count ++;
+            console.log (article);
             var n = article.title.search(new RegExp(userInput, "i"));
             if (n > -1) {
                 normFilter.push(article);
@@ -41,7 +45,7 @@ app.controller('controller1', function($scope, newService, $location) {
             normFilter: normFilter
         };
         console.log($scope.news);
-        $("#id1").remove();
+        $("#jumboId").remove();
     };
 
     $scope.userSearchReverse = function(userInput) {
