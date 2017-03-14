@@ -5,12 +5,9 @@ app.factory('newService', function($http) {
     //array to returns with news items
     var newsQueue = [];
     return {
-        getNews: getNews
-    }
+        getNews: getNews,
+    };
 
-    function returnNews() {
-        return newsQueue;
-    }
     //call to newsAPI
     function getNews() {
         var promise = $http({

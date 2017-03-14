@@ -1,16 +1,24 @@
 var app = angular.module('myMod', []);
 
-app.directive('contentBlock', function(){
+app.directive('reverseFilterContent', function(){
   return{
-    restrict:'EACM',
+    restrict:'EA',
     replace: false,
-    templateUrl:"partials/contentBlock.html"
+    templateUrl:"partials/reverseFilter.html"
+  };
+});
+
+app.directive('normalFilterContent', function(){
+  return{
+    restrict:'EA',
+    replace: false,
+    templateUrl:"partials/normalFilter.html"
   };
 });
 
 app.directive('jumbotron', function(){
   return{
-    restrict:'EAC',
+    restrict:'EA',
     replace: true,
     templateUrl:"partials/jumbotron.html"
   };
