@@ -3,8 +3,6 @@ var app = angular.module('myMod');
 app.controller('controller1', function($scope, newService, $location) {
     $scope.displayedNewsPromise = [];
     //handoff from factory
-//.getNewsAbcNewsAu()
-
     var newsFeed;
 
     newService.getNews().then(function(resultOfPromise) {
@@ -17,14 +15,14 @@ app.controller('controller1', function($scope, newService, $location) {
         $scope.displayedNewsPromise = $scope.displayedNewsPromise.concat(resultOfPromise);
 
         console.log($scope.displayedNewsPromise);
-        newsFeed = resultOfPromise;
+
     });
     newService.getNewsArsTech().then(function(resultOfPromise) {
         $scope.displayedNewsPromise = $scope.displayedNewsPromise.concat(resultOfPromise);
 
 
         console.log($scope.displayedNewsPromise);
-
+        newsFeed = $scope.displayedNewsPromise;
     });
     // emailjs.send("mailjet","template_Fj79lA9W",{name: "James", notes: "Check this out!"})
     // .then(function(response) {
