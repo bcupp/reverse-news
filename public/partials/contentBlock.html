@@ -1,17 +1,23 @@
-<div class="row-2">
+<div class="container">
 
-<div>
-  <div class="col-md-3" ng-repeat= "article in displayedNewsPromise">
-    <h2>Publication</h2>
-    <h3>{{article.title}}</h3>
-    <i>{{article.author}}</i>
+
+  <div class="row"  ng-repeat= "article in displayedNewsPromise">
+    <div class = "thumbnail">
+     <!--<a class="popout" href="{{article.url}}"><img class = "picture" src = "{{article.urlToImage}}"/> </a> -->
+    <!-- <a data-fancybox data-type="ajax" data-src="{{article.url}}" data-selector="#two" href="javascript:;"><img class = "picture" src = "{{article.urlToImage}}"/></a> -->
+ <a data-fancybox data-src="#hidden-content-1" href="javascript:;" class="btn">Open demo</a>
+ <div style="display: none;" id="hidden-content-1">
+ <h2>Hello!</h2>
+ <p>You are awesome!</p>
+</div>
+    <h2>{{article.source}}</h2>
+    <h3 class = "title">{{article.title}}</h3>
+    <i class = "authorTime" >{{article.author}}</i>
     <p> {{article.description}}  </p>
-    <a href="{{article.url}}"><img src = "{{article.urlToImage}}"/> </a>
-    </p>
 
   </div>
 
 
-</div>
+
 
 </div>
