@@ -1,40 +1,30 @@
 <div class="container">
+
+
   <div class="row"  ng-repeat= "article in displayedNewsPromise">
-    <div ng-click="openLightboxModal($index)">
-
-
-    <!-- <div id= "demoLightbox" class="lightbox-hide-fade" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="lightbox-content"> -->
-
-        <a data-toggle="lightbox" href="#demoLightbox">
-        <h2>{{article.source}}</h2>
-        <h3 class = "title">{{article.title}}</h3>
-        <i class = "authorTime" >{{article.author}}</i>
-        <p> {{article.description}}  </p>
-        <img class = "picture" ng-src = '{{article.urlToImage}}'/>
-      {{article.url}}  </a>
-      </div>
-      </div>
-    </div>
-
-     <!-- <a class="popout" href="{{article.url}}"></a> -->
-    <!-- <a data-fancybox data-type="ajax" data-src="{{article.url}}" data-selector="#two" href="javascript:;"><img class = "picture" src = "{{article.urlToImage}}"/></a> -->
- <!-- <a data-fancybox data-src="#hidden-content-1" href="javascript:;" class="btn">Open demo</a> -->
- <!-- <div style="display: none;" id="hidden-content-1">
- <h2>Hello!</h2>
- <p>You are awesome!</p>
-</div> -->
-
-  <!-- <div class="row"  ng-repeat= "article in displayedNewsPromise">
     <div class = "thumbnail">
-     <a class="popout" href="{{article.url}}"><img class = "picture" src = "{{article.urlToImage}}"/> </a> -->
+      <!-- saving for later just in case -->
+      <!-- 1 is our original and 2 is the ajax call
+            The interesting part is even in the repeat, it only uses one image-->
+     <!--<a class="popout" href="{{article.url}}"><img class = "picture" src = "{{article.urlToImage}}"/> </a> -->
     <!-- <a data-fancybox data-type="ajax" data-src="{{article.url}}" data-selector="#two" href="javascript:;"><img class = "picture" src = "{{article.urlToImage}}"/></a> -->
- <!-- <a data-fancybox data-src="#hidden-content-1" href="javascript:;" class="btn">Open demo</a>
- <div style="display: none;" id="hidden-content-1">
- <h2>Hello!</h2>
- <p>You are awesome!</p>
-</div>
+<!-- <a data-fancybox data-src="#hidden-content-1" href="javascript:;" class="btn">Open demo</a> -->
+<!-- This makes it appear once for every box. Maybe a custom directive is necessary  -->
+<!-- <a data-fancybox data-src="#hidden-content-1" href="javascript:;" ><img class = "picture" src = "{{article.urlToImage}}"/> </a>
+<div style="display: none;" id="hidden-content-1">
+<h3> {{article.url}} </h3>
+</div> -->
     <h2>{{article.source}}</h2>
     <h3 class = "title">{{article.title}}</h3>
     <i class = "authorTime" >{{article.author}}</i>
-    <p> {{article.description}}  </p>-->
+    <p> {{article.description}}  </p>
+    <a data-fancybox data-src="#hidden-content-1" href="javascript:;"><img class = "picture" src = "{{article.urlToImage}}"/> </a>
+    <div style="display: none;" id="hidden-content-1">
+    <img class = "picture" src = "{{article.urlToImage}}"/>
+    </div>
+  </div>
+
+
+
+
+</div>
