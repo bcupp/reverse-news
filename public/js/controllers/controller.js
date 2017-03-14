@@ -24,6 +24,9 @@ app.controller('controller1', function($scope, newService, $location) {
         console.log($scope.displayedNewsPromise);
 
     });
+
+    
+
     // emailjs.send("mailjet","template_Fj79lA9W",{name: "James", notes: "Check this out!"})
     // .then(function(response) {
     //    console.log("SUCCESS. status=%d, text=%s", response.status, response.text);

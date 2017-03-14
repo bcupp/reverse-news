@@ -46,5 +46,13 @@ app.factory('newService', function($http) {
         return promise;
     }
 
-
+    function getReadability() {
+      var promise = $http({
+        method: 'GET',
+        url:'https://newsapi.org/v1/articles?source=ars-technica&apiKey=7d72f4db8ee04e39a305e785477b413b'
+      }).then(function sucessfullCallback(response){
+        console.log(response.data);
+        return newsQueue = response.data.articles;
+      })
+    }
 });
