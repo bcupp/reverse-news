@@ -11,9 +11,6 @@ app.factory('newService', function($http) {
         //could be more
     }
 
-    function returnNews() {
-        return newsQueue;
-    }
     //call to newsAPI
 
     function getNews() {

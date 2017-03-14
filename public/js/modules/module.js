@@ -1,1 +1,1 @@
-var app = angular.module('myMod', ['ngRoute','bootstrapLightbox']);
+var app = angular.module('myMod', ['ngRoute']);

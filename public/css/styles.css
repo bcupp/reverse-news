@@ -18,35 +18,13 @@
 .spacer-2{
   padding:1%;
 }
+
 /* eric's temp add */
-btn{
-  display:inline-block;
 
-}
-.title {
-  position: relative;
-  display: inline;
-  font-weight: bold;
-  left: 10%;
-}
 
-.authorTime {
-  position: relative;
-  display: block;
-  left: 15%;
-  font-style: italic;
-}
 
-.picture img{
-  display:inline;
-  width: 15%;
-  float:left;
-  border-radius: 15%;
-  margin-top: 5px;
-  z-index: -100;
-}
+img {
+  height: 250px;
+  width: 250px;
 
-.thumbnail {
-  height: 25%;
-  min-height: 115px;
 }

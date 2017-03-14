@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en" ng-app='myMod'>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,18 +22,13 @@ Turning off because right now it fires off every time I reload the page
 </script> -->
 </head>
 
-
 <body ng-controller='controller1'>
-    <h1>Hello!</h1>
-
-
 
     <div class='container-fluid'>
         <jumbotron></jumbotron>
         <search-nav></search-nav>
-        <content-block></content-block>
+        <ng-view></ng-view>
     </div>
-
 
     <div class='spacer'>
         <div class='col-md-12'>
@@ -48,11 +42,7 @@ Turning off because right now it fires off every time I reload the page
         </div>
     </div>
 
-    <ng-view></ng-view>
-
 </body>
-
-
 
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js'></script>
