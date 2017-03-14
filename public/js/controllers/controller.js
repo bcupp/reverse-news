@@ -7,32 +7,21 @@ app.controller('controller1', function($scope, newService, $location) {
 
     newService.getNews().then(function(resultOfPromise) {
         newsFeed = resultOfPromise;
-
-        console.log($scope.displayedNewsPromise);
-
     });
     newService.getNewsAbcNewsAu().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
-
-        console.log($scope.displayedNewsPromise);
-
     });
     newService.getNewsArsTech().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
-
-
-        console.log($scope.displayedNewsPromise);
-      
     });
+
+    
     // emailjs.send("mailjet","template_Fj79lA9W",{name: "James", notes: "Check this out!"})
     // .then(function(response) {
     //    console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
     // }, function(err) {
     //    console.log("FAILED. error=", err);
     // });
-    //
-    // $scope.displayedNews = newService.getNews();
-    // console.log($scope.displayedNews);
 
     function newsArray(userInput) {
         var reverseFilter = [];
@@ -52,6 +41,7 @@ app.controller('controller1', function($scope, newService, $location) {
             normFilter: normFilter
         };
         console.log($scope.news);
+        $("#id1").remove();
     };
 
     $scope.userSearchReverse = function(userInput) {
