@@ -6,23 +6,23 @@ app.controller('controller1', function($scope, newService, $location) {
     var newsFeed;
 
     newService.getNews().then(function(resultOfPromise) {
-        $scope.displayedNewsPromise = resultOfPromise;
+        newsFeed = resultOfPromise;
 
         console.log($scope.displayedNewsPromise);
 
     });
     newService.getNewsAbcNewsAu().then(function(resultOfPromise) {
-        $scope.displayedNewsPromise = $scope.displayedNewsPromise.concat(resultOfPromise);
+        newsFeed = newsFeed.concat(resultOfPromise);
 
         console.log($scope.displayedNewsPromise);
 
     });
     newService.getNewsArsTech().then(function(resultOfPromise) {
-        $scope.displayedNewsPromise = $scope.displayedNewsPromise.concat(resultOfPromise);
+        newsFeed = newsFeed.concat(resultOfPromise);
 
 
         console.log($scope.displayedNewsPromise);
-        newsFeed = $scope.displayedNewsPromise;
+      
     });
     // emailjs.send("mailjet","template_Fj79lA9W",{name: "James", notes: "Check this out!"})
     // .then(function(response) {
