@@ -18,3 +18,8 @@
 .spacer-2{
   padding:1%;
 }
+
+img {
+  height: 250px;
+  width: 250px;
+}

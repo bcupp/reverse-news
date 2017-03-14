@@ -4,7 +4,8 @@
     <form class="navbar-form navbar-left" role="search">
       <div class="form-group">
         <input type="text" class="form-control" ng-model="userInput" />
-        <button type="button" name="button" ng-click='userSearch(userInput)'>Submit</button>
+        <button type="button" name="button" ng-click='userSearchReverse(userInput)'>Filter Out Word</button>
+        <button type="button" name="button" ng-click='userSearchNorm(userInput)'>Search By Word</button>
       </div>
 
       <!-- need bower (should be included in npm install)to run the toggle . Will look like a checkbox until then -->
