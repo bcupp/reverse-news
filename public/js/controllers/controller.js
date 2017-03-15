@@ -1,7 +1,6 @@
 var app = angular.module('myMod');
 
 app.controller('controller1', function($scope, newService, $location) {
-    $scope.displayedNewsPromise = [];
     //handoff from factory
     var newsFeed;
 
@@ -14,6 +13,8 @@ app.controller('controller1', function($scope, newService, $location) {
     newService.getNewsArsTech().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
     });
+
+
 
 
     // emailjs.send("mailjet","template_Fj79lA9W",{name: "James", notes: "Check this out!"})
