@@ -1,7 +1,6 @@
 var app = angular.module('myMod');
 
 app.controller('controller1', function($scope, newService, $location) {
-    $scope.displayedNewsPromise = [];
     //handoff from factory
     var newsFeed;
 
@@ -18,7 +17,6 @@ app.controller('controller1', function($scope, newService, $location) {
     $scope.viewArticle = function(url){
       console.log(url);
       $scope.wholeArticle = newService.getReadability(url);
-
     };
 
     function newsArray(userInput) {
@@ -39,6 +37,7 @@ app.controller('controller1', function($scope, newService, $location) {
             normFilter: normFilter
         };
         console.log($scope.news);
+        $("#jumboId").remove();
     };
 
     $scope.userSearchReverse = function(userInput) {

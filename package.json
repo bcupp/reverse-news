@@ -18,6 +18,5 @@
   },
   "homepage": "https://github.com/bcupp/reverse-news#readme",
   "dependencies": {
-    "angular-bootstrap-lightbox": "^0.12.0"
   }
 }
