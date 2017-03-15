@@ -1,21 +1,9 @@
-// $("#test").on('click', function() {
-//
-//   $.fancybox.open([
-//     {
-//       src  : 'https://c1.staticflickr.com/9/8148/29324593462_abebaddc38_k.jpg',
-//       opts : {
-//         caption : 'First caption'
-//       }
-//     },
-//     {
-//       src  : 'https://c2.staticflickr.com/6/5499/30972532232_051e1dc57e_h.jpg',
-//       opts : {
-//         caption : 'Second caption'
-//       }
-//     }
-//   ], {
-//     loop : false,
-//     hash : "test"
-//   });
-//
+// emailjs.send("mailjet","template_Fj79lA9W",{name: "James", notes: "Check this out!"})
+// .then(function(response) {
+//    console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+// }, function(err) {
+//    console.log("FAILED. error=", err);
 // });
+//
+// $scope.displayedNews = newService.getNews();
+// console.log($scope.displayedNews);

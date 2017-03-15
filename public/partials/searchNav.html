@@ -6,6 +6,41 @@
         <input type="text" class="form-control" ng-model="userInput" />
         <button type="button" name="button" ng-click='userSearchReverse(userInput)'>Filter Out Word</button>
         <button type="button" name="button" ng-click='userSearchNorm(userInput)'>Search By Word</button>
+
+          <!-- -->
+          <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModal">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel1">Tell us your email!</h4>
+          </div>
+          <div class="modal-body">
+            <div class="input-group">
+
+            <!-- Inside -->
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Your Email" ng-model="userEmail">
+                  <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button" ng-click='sendEmail(userEmail)'>Email!</button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <!-- End -->
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#emailModal">
+      Inbox it!
+    </button>
+          <!-- -->
+          <!-- <button type="button" name="button" ng-click='sendEmail(userEmail)'>Search By Word</button> -->
+
       </div>
 
       <!-- need bower (should be included in npm install)to run the toggle . Will look like a checkbox until then -->
