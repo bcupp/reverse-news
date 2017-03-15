@@ -18,7 +18,6 @@ app.factory('newService', function($http) {
             method: 'GET',
             url: 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=7d72f4db8ee04e39a305e785477b413b'
         }).then(function sucessfullCallback(response) {
-            console.log(response.data);
             return newsQueue = response.data.articles;
         });
         return promise;
@@ -29,7 +28,6 @@ app.factory('newService', function($http) {
             method: 'GET',
             url: 'https://newsapi.org/v1/articles?source=abc-news-au&apiKey=7d72f4db8ee04e39a305e785477b413b'
         }).then(function sucessfullCallback(response) {
-            console.log(response.data);
             return newsQueue = response.data.articles;
         });
         return promise;
@@ -40,7 +38,6 @@ app.factory('newService', function($http) {
             method: 'GET',
             url: 'https://newsapi.org/v1/articles?source=ars-technica&apiKey=7d72f4db8ee04e39a305e785477b413b'
         }).then(function sucessfullCallback(response) {
-            console.log(response.data);
             return newsQueue = response.data.articles;
         });
         return promise;
@@ -49,10 +46,16 @@ app.factory('newService', function($http) {
     function getReadability() {
       var promise = $http({
         method: 'GET',
-        url:'https://newsapi.org/v1/articles?source=ars-technica&apiKey=7d72f4db8ee04e39a305e785477b413b'
+        url:'/get-readability',
+        data:'https://techcrunch.com/2017/03/14/reid-hoffman-joins-microsoft-board/'
       }).then(function sucessfullCallback(response){
-        console.log(response.data);
-        return newsQueue = response.data.articles;
-      })
-    }
+        console.log(response);
+        var scrubbed = response;
+        // return scrubbed;
+      });
+    };
+
+
+
+
 });

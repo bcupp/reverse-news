@@ -1,20 +1,22 @@
 var express = require('express');
 var app = express();
+app.use(express.static(__dirname + '/public'))
+var read = require('node-readability');
 // var password = require('./password.js')
 // var connectionString = ....'+ password +'......  same for var config
-var read = require('node-readability');
 
 
 
-app.get('/get-readability', function(url){
+app.get('/get-readability', function(req, res){
   var results;
-  read(url, function(err,article, meta){
+  console.log(req);
+  read(req, function(err,article, meta){
     results = article.content;
     console.log(results);
     article.close();
   });
-  return results;
-};
+  res.send(results);
+});
 
 
 
