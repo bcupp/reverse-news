@@ -1,6 +1,6 @@
 var app = angular.module('myMod');
 
-app.controller('controller1', function($scope, newService, $location) {
+app.controller('controller1', function($scope, newService, $location, $sce) {
     //handoff from factory
     var newsFeed;
 
@@ -22,10 +22,14 @@ app.controller('controller1', function($scope, newService, $location) {
       console.log(myModal);
       newService.getReadability(url).then(function (response){
         var temp = newService.returnArticle();
-        $scope.wholeArticle = $.parseHTML(temp);
+        console.log(temp);
+
+        $scope.wholeArticle = $sce.trustAsHtml(temp);
         console.log($scope.wholeArticle);
+
+
+
       });
-          // $(myModal).modal();
     };
 
 

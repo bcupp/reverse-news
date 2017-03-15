@@ -18,5 +18,8 @@
   },
   "homepage": "https://github.com/bcupp/reverse-news#readme",
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "ng-sanitize": "^1.5.7"
   }
 }
