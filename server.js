@@ -6,7 +6,7 @@ var read = require('node-readability');
 
 
 
-function readArticle(url){
+app.get('/get-readability', function(url){
   var results;
   read(url, function(err,article, meta){
     results = article.content;
