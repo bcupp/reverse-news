@@ -1,16 +1,20 @@
-
 var express = require('express');
 var app = express();
-
-var password = require('./password.js')
+// var password = require('./password.js')
 // var connectionString = ....'+ password +'......  same for var config
-
 var read = require('node-readability');
-read('https://techcrunch.com/2017/03/14/teams-microsofts-slack-rival-opens-to-all-office-365-users/', function(err,article, meta){
-  var results = article.content;
+
+
+
+function readArticle(url){
+  var results;
+  read(url, function(err,article, meta){
+    results = article.content;
     console.log(results);
-   article.close();
-});
+    article.close();
+  });
+  return results;
+};
 
 
 
