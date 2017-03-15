@@ -2,21 +2,34 @@ var express = require('express');
 var app = express();
 app.use(express.static(__dirname + '/public'))
 var read = require('node-readability');
+var bodyParser = require('body-parser');
+app.use(bodyParser.json({extended: true}));
+
 // var password = require('./password.js')
 // var connectionString = ....'+ password +'......  same for var config
 
 
 
-app.get('/get-readability', function(req, res){
+
+
+app.post('/get-readability', function(req, res){
+  var obj = {
+    url: req.body.url
+  };
   var results;
-  console.log(req);
-  read(req, function(err,article, meta){
+  read(obj.url, function(err,article, meta){
+    console.log('hello');
     results = article.content;
-    console.log(results);
     article.close();
+    res.send(results);
   });
-  res.send(results);
 });
+
+
+
+
+
+
 
 
 

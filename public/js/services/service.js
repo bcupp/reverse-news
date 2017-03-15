@@ -7,7 +7,8 @@ app.factory('newService', function($http) {
     return {
         getNews: getNews,
         getNewsAbcNewsAu: getNewsAbcNewsAu,
-        getNewsArsTech: getNewsArsTech
+        getNewsArsTech: getNewsArsTech,
+        getReadability: getReadability
         //could be more
     }
 
@@ -43,17 +44,26 @@ app.factory('newService', function($http) {
         return promise;
     }
 
+
+
+
     function getReadability() {
+      console.log('post function run');
+      var url2 = {
+            url: 'https://techcrunch.com/2017/03/14/reid-hoffman-joins-microsoft-board/'
+            }
       var promise = $http({
-        method: 'GET',
+        method: 'POST',
         url:'/get-readability',
-        data:'https://techcrunch.com/2017/03/14/reid-hoffman-joins-microsoft-board/'
+        data: url2
       }).then(function sucessfullCallback(response){
-        console.log(response);
-        var scrubbed = response;
+        var scrubbed = response.data;
+        console.log(scrubbed);
         // return scrubbed;
       });
     };
+
+
 
 
 

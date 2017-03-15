@@ -19,7 +19,11 @@ app.controller('controller1', function($scope, newService, $location) {
         console.log($scope.displayedNewsPromise);
     });
 
-      // newService.getReadability();
+
+
+      newService.getReadability();
+
+
 
 
 
