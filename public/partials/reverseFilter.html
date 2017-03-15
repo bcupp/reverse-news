@@ -14,13 +14,12 @@
         <h4 class="modal-title" id="myModalLabel">{{article.title}}</h4>
       </div>
       <div class="modal-body">
-        <!-- {{wholeArticle}} -->
-        PLACEHOLDER
+        {{wholeArticle}}
       </div>
     </div>
   </div>
 </div>
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal{{$index}}" ng-click='viewArticle(article.url)'>
+<button type="button" class="btn btn-primary btn-lg" data-target="#modal{{$index}}" data-toggle="modal" ng-click='viewArticle(article.url)'>
   Launch demo modal
 </button>
     </div>

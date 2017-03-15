@@ -14,10 +14,22 @@ app.controller('controller1', function($scope, newService, $location) {
         newsFeed = newsFeed.concat(resultOfPromise);
     });
 
-    $scope.viewArticle = function(url){
+
+//sends article url to service which then sends it so server and runs it through readbility
+    $scope.viewArticle = function(url, myModal){
+      $scope.wholeArticle = '';
       console.log(url);
-      $scope.wholeArticle = newService.getReadability(url);
+      console.log(myModal);
+      newService.getReadability(url).then(function (response){
+        var temp = newService.returnArticle();
+        $scope.wholeArticle = $.parseHTML(temp);
+        console.log($scope.wholeArticle);
+      });
+          // $(myModal).modal();
     };
+
+
+
 
     function newsArray(userInput) {
         var reverseFilter = [];

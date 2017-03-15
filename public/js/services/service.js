@@ -3,12 +3,14 @@ var app = angular.module('myMod');
 app.factory('newService', function($http) {
 
     //array to returns with news items
+    var articleContent;
     var newsQueue = [];
     return {
         getNews: getNews,
         getNewsAbcNewsAu: getNewsAbcNewsAu,
         getNewsArsTech: getNewsArsTech,
-        getReadability: getReadability
+        getReadability: getReadability,
+        returnArticle: returnArticle
         //could be more
     }
 
@@ -56,11 +58,15 @@ app.factory('newService', function($http) {
         url:'/get-readability',
         data: urlObj
       }).then(function sucessfullCallback(response){
-        var articleContent = response.data;
+        articleContent = response.data;
         console.log(articleContent);
-        return articleContent;
       });
+      return promise;
     };
+
+    function returnArticle() {
+      return articleContent;
+    }
 
 
 
