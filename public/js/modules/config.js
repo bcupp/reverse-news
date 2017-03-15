@@ -1,7 +1,8 @@
 var app = angular.module('myMod');
 
 
-app.config(function($routeProvider, $locationProvider) {
+app.config(function($routeProvider, $locationProvider ) {
+
     $routeProvider
         .when('/reverseFilter', {
             controller: 'controller1',
@@ -12,5 +13,7 @@ app.config(function($routeProvider, $locationProvider) {
             templateUrl: 'partials/normalFilter.html'
         });
 
-    $locationProvider.hashPrefix('');
+    $locationProvider.html5Mode(false).hashPrefix('');
+
+
 });
