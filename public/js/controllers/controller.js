@@ -7,25 +7,19 @@ app.controller('controller1', function($scope, newService, $location) {
 
     newService.getNews().then(function(resultOfPromise) {
         newsFeed = resultOfPromise;
-        console.log($scope.displayedNewsPromise);
-
     });
     newService.getNewsAbcNewsAu().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
-        console.log($scope.displayedNewsPromise);
     });
     newService.getNewsArsTech().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
-        console.log($scope.displayedNewsPromise);
     });
 
+    $scope.viewArticle = function(url){
+      console.log(url);
+      $scope.wholeArticle = newService.getReadability(url);
 
-
-      newService.getReadability();
-
-
-
-
+    };
 
     function newsArray(userInput) {
         var reverseFilter = [];

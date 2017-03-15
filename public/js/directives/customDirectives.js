@@ -26,7 +26,7 @@ app.directive('jumbotron', function(){
 
 app.directive('searchNav', function(){
   return{
-    restrict:'EAC',
+    restrict:'EA',
     replace: true,
     templateUrl:"partials/searchNav.html"
   };
@@ -34,7 +34,7 @@ app.directive('searchNav', function(){
 
 app.directive('spacer', function(){
   return{
-    restrict:'EAC',
+    restrict:'EA',
     replace: true,
     templateUrl:"partials/spacer.html"
   };
@@ -42,7 +42,7 @@ app.directive('spacer', function(){
 
 app.directive('bottomFooter', function(){
   return{
-    restrict:'EACM',
+    restrict:'EA',
     replace: false,
     templateUrl:"partials/bottomFooter.html"
   };

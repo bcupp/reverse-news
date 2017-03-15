@@ -9,9 +9,6 @@ app.use(bodyParser.json({extended: true}));
 // var connectionString = ....'+ password +'......  same for var config
 
 
-
-
-
 app.post('/get-readability', function(req, res){
   var obj = {
     url: req.body.url
@@ -24,13 +21,6 @@ app.post('/get-readability', function(req, res){
     res.send(results);
   });
 });
-
-
-
-
-
-
-
 
 
 var server = app.listen(3000, function() {

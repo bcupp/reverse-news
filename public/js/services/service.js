@@ -46,20 +46,19 @@ app.factory('newService', function($http) {
 
 
 
-
-    function getReadability() {
+    function getReadability(url) {
       console.log('post function run');
-      var url2 = {
-            url: 'https://techcrunch.com/2017/03/14/reid-hoffman-joins-microsoft-board/'
+      var urlObj = {
+            url: url
             }
       var promise = $http({
         method: 'POST',
         url:'/get-readability',
-        data: url2
+        data: urlObj
       }).then(function sucessfullCallback(response){
-        var scrubbed = response.data;
-        console.log(scrubbed);
-        // return scrubbed;
+        var articleContent = response.data;
+        console.log(articleContent);
+        return articleContent;
       });
     };
 
