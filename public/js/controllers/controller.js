@@ -54,7 +54,8 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
 //almost what we're looking for
 $scope.removeHeader = function(){
       if(location.href !== 'http://localhost:3000/' )
-        $(".jumbotron").remove();
+
+        $(".jumbotron").addClass("bounceOut").remove();
         //$(".navbar-default").remove();
         console.log("jazz");
       };
