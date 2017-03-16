@@ -1,25 +1,27 @@
 var app = angular.module('myMod');
 
 app.controller('controller1', function($scope, newService, $location) {
+
+
     $scope.displayedNewsPromise = [];
     //handoff from factory
     var newsFeed;
 
     newService.getNews().then(function(resultOfPromise) {
         newsFeed = resultOfPromise;
-
+        newsArray($location.search().q);
         console.log($scope.displayedNewsPromise);
 
     });
     newService.getNewsAbcNewsAu().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
-
+        newsArray($location.search().q);
         console.log($scope.displayedNewsPromise);
 
     });
     newService.getNewsArsTech().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
-
+        newsArray($location.search().q);
 
         console.log($scope.displayedNewsPromise);
 
@@ -28,7 +30,9 @@ app.controller('controller1', function($scope, newService, $location) {
     function newsArray(userInput) {
         var reverseFilter = [];
         var normFilter = [];
-
+        if (newsFeed === undefined){
+          return;
+        }
         newsFeed.forEach(function(article) {
             var n = article.title.search(new RegExp(userInput, "i"));
             if (n > -1) {
@@ -64,14 +68,6 @@ $scope.$on('$locationChangeSuccess', function(){
     console.log($scope.userInput = $location.search().q);
     newsArray($location.search().q);
 
-    //$location.path('/normalFilter'+$location.search().q);
-    //userInput = $location.search().q;
-    // console.log ();
-    // $location.path('/normalFilter')+ $location.search().q;
-  //  console.log($location.search().q);
-    //userInput= $location.search().q;
-    //console.log(newsArray($location.search().q));
-    //console.log(userSearchReverse($location.search().q));
 });
 
 
