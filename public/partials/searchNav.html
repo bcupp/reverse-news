@@ -1,9 +1,10 @@
-<nav class="navbar navbar-default" role="navigation" ng-controller='controller1' >
+<nav class="navbar navbar-default searchStyles" role="navigation" ng-controller='controller1' >
 
   <div class="navbar" id="navbar-1">
-    <form class="navbar-form navbar-left" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" ng-model="userInput" />
+    <form role="search">
+      <div class="form-group ">
+        <input type="text" class="form-control " ng-model="userInput" />
+        <br>
         <button type="button" name="button" ng-click='userSearchReverse(userInput)'>Filter Out Word</button>
         <button type="button" name="button" ng-click='userSearchNorm(userInput)'>Search By Word</button>
 
@@ -38,15 +39,9 @@
     <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#emailModal">
       Inbox it!
     </button>
-          <!-- -->
-          <!-- <button type="button" name="button" ng-click='sendEmail(userEmail)'>Search By Word</button> -->
 
       </div>
 
-      <!-- need bower (should be included in npm install)to run the toggle . Will look like a checkbox until then -->
-      <!-- <label class="checkbox-inline">
-        <input type="checkbox" checked data-toggle="toggle"> Reverse
-      </label> -->
     </form>
 
     <div class ="breadCrumbs">
