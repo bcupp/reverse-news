@@ -1,9 +1,7 @@
 var app = angular.module('myMod');
 
-app.controller('controller1', function($scope, newService, $location) {
 
-
-    $scope.displayedNewsPromise = [];
+app.controller('controller1', function($scope, newService, $location, $sce) {
     //handoff from factory
     var newsFeed;
 
@@ -19,6 +17,18 @@ app.controller('controller1', function($scope, newService, $location) {
         newsFeed = newsFeed.concat(resultOfPromise);
         newsArray($location.search().q);
     });
+
+
+    //sends article url to service which then sends it so server and runs it through readbility
+    $scope.viewArticle = function(url, myModal) {
+        $scope.wholeArticle = '';
+        newService.getReadability(url).then(function(response) {
+            var temp = newService.returnArticle();
+            $scope.wholeArticle = $sce.trustAsHtml(temp);
+        });
+    };
+
+
 
     function newsArray(userInput) {
         var reverseFilter = [];
@@ -39,9 +49,9 @@ app.controller('controller1', function($scope, newService, $location) {
             reverseFilter: reverseFilter,
             normFilter: normFilter
         };
-        console.log($scope.news);
         $("#jumboId").remove();
     };
+
 
     $scope.userSearchReverse = function(userInput) {
         //only changes the view
@@ -81,6 +91,5 @@ $scope.sendEmail = function (userEmail) {
   });
   console.log(userEmail);
 };
-
 
 });
