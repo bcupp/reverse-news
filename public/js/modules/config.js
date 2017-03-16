@@ -11,8 +11,11 @@ app.config(function($routeProvider, $locationProvider ) {
         .when('/normalFilter', {
             controller: 'controller1',
             templateUrl: 'partials/normalFilter.html'
+        })
+        .otherwise('/normalFilter', {
+            controller: 'controller1',
+            templateUrl: 'partials/normalFilter.html'
         });
-
     $locationProvider.html5Mode(false).hashPrefix('');
 
 

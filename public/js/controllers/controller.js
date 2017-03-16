@@ -51,15 +51,6 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         };
 
     };
-//almost what we're looking for
-// $scope.removeHeader = function(){
-//       if(location.href !== 'http://localhost:3000/' )
-//         $("jumbotron").addClass("wow bounceOut");
-//         //$(".jumbotron").addClass("wow bounceOut").remove();
-//         $(".navbar-default").remove();
-//         console.log("jazz");
-//       };
-// $scope.removeHeader();
 
     $scope.userSearchReverse = function(userInput) {
         //only changes the view

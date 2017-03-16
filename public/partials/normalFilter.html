@@ -2,7 +2,6 @@
     <div>
         <div class="col-md-3 articleDiv wow bounceInUp" ng-repeat="article in news.normFilter" style="background-image: url({{article.urlToImage}})">
             <h3>{{article.title}}</h3>
-            <i>{{article.author}}</i>
             </p>
             <div class="modal fade" id="modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog modal-lg center-block" role="document">
