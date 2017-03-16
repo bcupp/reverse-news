@@ -49,20 +49,28 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             reverseFilter: reverseFilter,
             normFilter: normFilter
         };
-        $("#jumboId").remove();
-    };
 
+    };
+//almost what we're looking for
+$scope.removeHeader = function(){
+      if(location.href !== 'http://localhost:3000/' )
+        $("#jumboId").remove();
+        console.log("jazz");
+      };
+$scope.removeHeader();
 
     $scope.userSearchReverse = function(userInput) {
         //only changes the view
         $location.path('/reverseFilter');
         $location.search('q', userInput);
+
     };
 
     $scope.userSearchNorm = function(userInput) {
         //only changes view now
         $location.path('/normalFilter');
         $location.search('q', userInput);
+
     };
 
 $scope.$on('$locationChangeSuccess', function(){
