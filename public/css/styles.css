@@ -36,7 +36,8 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 60px;
-    background-color: #f5f5f5;
+    background-color: #006196;
+    color: white;
 }
 
 .articleDiv {
@@ -44,16 +45,12 @@ body {
     /*width: 300px;*/
     padding: 20px;
     border-radius: 10px;
-    /*margin: 3px;*/
-    /*color: white;*/
+
 }
 
 
 img {
   max-width: 100%;
-  /*margin-left: 50%;
-  margin-right: 50%;*/
-
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -64,4 +61,17 @@ h1, h2, h3, h4, h5, h6 {
 .articleImg {
     height: 250px;
     width: 250px;
+}
+
+.jumbotron {
+  background-color: #46C17C;
+  color: white;
+}
+
+.searchStyles {
+  background-color: #006196;
+  color: white;
+  padding: 10px;
+
+
 }
