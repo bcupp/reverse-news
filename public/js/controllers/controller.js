@@ -52,14 +52,14 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
 
     };
 //almost what we're looking for
-$scope.removeHeader = function(){
-      if(location.href !== 'http://localhost:3000/' )
-
-        $(".jumbotron").addClass("bounceOut").remove();
-        //$(".navbar-default").remove();
-        console.log("jazz");
-      };
-$scope.removeHeader();
+// $scope.removeHeader = function(){
+//       if(location.href !== 'http://localhost:3000/' )
+//         $("jumbotron").addClass("wow bounceOut");
+//         //$(".jumbotron").addClass("wow bounceOut").remove();
+//         $(".navbar-default").remove();
+//         console.log("jazz");
+//       };
+// $scope.removeHeader();
 
     $scope.userSearchReverse = function(userInput) {
         //only changes the view
@@ -81,7 +81,12 @@ $scope.$on('$locationChangeSuccess', function(){
     //grab property out of it
     console.log($scope.userInput = $location.search().q);
     newsArray($location.search().q);
-
+    //$(".jumbotron").addClass("wow bounceOutDown");
+    //$(".jumbotron").hide('slow', function(){ $target.remove(); });
+    $(".jumbotron").slideUp("fast", function(){ $target.remove(); });
+    //$(".jumbotron").remove();
+    //$(".jumbotron").remove();
+    console.log("jazz");
 });
 
 

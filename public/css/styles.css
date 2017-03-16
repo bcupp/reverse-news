@@ -1,6 +1,9 @@
 col-md-3 {
     border: 1px solid black;
 }
+.invisible{
+  visibility:hidden;
+}
 
 .footer {
     background-color: black;
