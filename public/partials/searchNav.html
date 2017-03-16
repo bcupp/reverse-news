@@ -1,12 +1,11 @@
 <nav class="navbar navbar-default searchStyles" role="navigation" ng-controller='controller1' >
 
-  <div class="navbar" id="navbar-1">
+  <div class="navbar">
     <form role="search">
       <div class="form-group ">
         <input type="text" class="form-control " ng-model="userInput" />
-        <br>
-        <button type="button" name="button" ng-click='userSearchReverse(userInput)'>Filter Out Word</button>
-        <button type="button" name="button" ng-click='userSearchNorm(userInput)'>Search By Word</button>
+        <button type="button" name="button" class="btn btn-secondary mainButton" ng-click='userSearchReverse(userInput)'>Filter Out Word</button>
+        <button type="button" name="button" class="btn btn-secondary mainButton" ng-click='userSearchNorm(userInput)'>Search By Word</button>
 
           <!-- -->
           <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModal">
@@ -36,17 +35,13 @@
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#emailModal">
+    <button type="button" class="btn btn-secondary mainButton" data-toggle="modal" data-target="#emailModal">
       Inbox it!
     </button>
 
       </div>
 
     </form>
-
-    <div class ="breadCrumbs">
-    <!-- pull from search -->
-    </div>
   </div>
 
 </nav>
