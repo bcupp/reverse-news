@@ -15,23 +15,14 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
     });
 
 
-//sends article url to service which then sends it so server and runs it through readbility
-    $scope.viewArticle = function(url, myModal){
-      $scope.wholeArticle = '';
-      console.log(url);
-      console.log(myModal);
-      newService.getReadability(url).then(function (response){
-        var temp = newService.returnArticle();
-        console.log(temp);
-
-        $scope.wholeArticle = $sce.trustAsHtml(temp);
-        console.log($scope.wholeArticle);
-
-
-
-      });
+    //sends article url to service which then sends it so server and runs it through readbility
+    $scope.viewArticle = function(url, myModal) {
+        $scope.wholeArticle = '';
+        newService.getReadability(url).then(function(response) {
+            var temp = newService.returnArticle();
+            $scope.wholeArticle = $sce.trustAsHtml(temp);
+        });
     };
-
 
 
 
@@ -52,9 +43,9 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             reverseFilter: reverseFilter,
             normFilter: normFilter
         };
-        console.log($scope.news);
         $("#jumboId").remove();
     };
+
 
     $scope.userSearchReverse = function(userInput) {
         newsArray(userInput);
@@ -65,7 +56,6 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         newsArray(userInput);
         $location.path('/normalFilter');
     };
-
 
 
 });
