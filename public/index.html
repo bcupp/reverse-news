@@ -6,10 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="fancybox/dist/jquery.fancybox.css">
-    <script src="fancybox/dist/jquery.fancybox.js"></script>
-<link rel="stylesheet" href="/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.css">
 
     <title>Reverse News</title>
 <!-- creating email functionality
@@ -26,7 +22,7 @@ Turning off because right now it fires off every time I reload the page -->
 <body ng-controller='controller1'>
 
     <div class='container-fluid'>
-        <jumbotron></jumbotron>
+        <jumbotron id='jumboId'></jumbotron>
         <search-nav></search-nav>
         <ng-view></ng-view>
     </div>
@@ -46,10 +42,9 @@ Turning off because right now it fires off every time I reload the page -->
 
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.min.js'></script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js'></script>
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-
 <script src='js/modules/module.js'></script>
 <script src='js/modules/config.js'></script>
 <script src='js/directives/customDirectives.js'></script>
@@ -58,5 +53,4 @@ Turning off because right now it fires off every time I reload the page -->
 <script src='js/services/service.js'></script>
 <script src='js/script.js'></script>
 
-<script src="/angular-bootstrap-lightbox/dist/angular-bootstrap-lightbox.min.js"></script>
 </html>

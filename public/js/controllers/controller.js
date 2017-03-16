@@ -10,21 +10,14 @@ app.controller('controller1', function($scope, newService, $location) {
     newService.getNews().then(function(resultOfPromise) {
         newsFeed = resultOfPromise;
         newsArray($location.search().q);
-        console.log($scope.displayedNewsPromise);
-
     });
     newService.getNewsAbcNewsAu().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
         newsArray($location.search().q);
-        console.log($scope.displayedNewsPromise);
-
     });
     newService.getNewsArsTech().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
         newsArray($location.search().q);
-
-        console.log($scope.displayedNewsPromise);
-
     });
 
     function newsArray(userInput) {
@@ -47,6 +40,7 @@ app.controller('controller1', function($scope, newService, $location) {
             normFilter: normFilter
         };
         console.log($scope.news);
+        $("#jumboId").remove();
     };
 
     $scope.userSearchReverse = function(userInput) {
