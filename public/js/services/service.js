@@ -2,21 +2,21 @@ var app = angular.module('myMod');
 
 app.factory('newService', function($http) {
 
-    //array to returns with news items
+    //readability container
     var articleContent;
+    //array to returns with news items
     var newsQueue = [];
+    //returning all the functions within service
     return {
-        getNews: getNews,
+        getNewsTechCrunch: getNewsTechCrunch,
         getNewsAbcNewsAu: getNewsAbcNewsAu,
         getNewsArsTech: getNewsArsTech,
         getReadability: getReadability,
         returnArticle: returnArticle
-        //could be more
     }
 
-    //call to newsAPI
-
-    function getNews() {
+    //Makes call to newsAPI for techcrunch
+    function getNewsTechCrunch() {
         var promise = $http({
             method: 'GET',
             url: 'https://newsapi.org/v1/articles?source=techcrunch&apiKey=7d72f4db8ee04e39a305e785477b413b'
@@ -26,6 +26,7 @@ app.factory('newService', function($http) {
         return promise;
     };
 
+    //Makes call to newsAPI for abc-news-au
     function getNewsAbcNewsAu() {
         var promise = $http({
             method: 'GET',
@@ -36,6 +37,7 @@ app.factory('newService', function($http) {
         return promise;
     };
 
+    //Makes call to newsAPI for ArsTech
     function getNewsArsTech() {
         var promise = $http({
             method: 'GET',
@@ -46,6 +48,7 @@ app.factory('newService', function($http) {
         return promise;
     };
 
+    //Makes call to readability in the server
     function getReadability(url) {
         var urlObj = {
             url: url
@@ -59,11 +62,9 @@ app.factory('newService', function($http) {
         });
         return promise;
     };
+
+    //Makes call to return the article controller
     function returnArticle() {
         return articleContent;
     };
-
-
-
-
 });

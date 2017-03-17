@@ -1,10 +1,15 @@
 <div class="row-2">
     <div>
+      <!--repeats the articles in the div-->
         <div ng-repeat="article in news.normFilter" >
           <div class="col-md-3 articleDiv wow bounceInUp" style="background-image: url({{article.urlToImage}})">
+
+          <!-- content wrap in <a> to make image square clickable-->
             <a class="aStyles" data-target="#modal{{$index}}" data-toggle="modal" ng-click='viewArticle(article.url)'>
                <h3 class='article-title'><span>{{article.title}}</span></h3>
-          </a>
+            </a>
+
+            <!-- Readability modal starts-->
             <div class="modal fade" id="modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog modal-lg center-block" role="document">
                     <div class="modal-content">
@@ -13,14 +18,19 @@
                             <h2 class="modal-title" id="myModalLabel">{{article.title}}</h2>
                         </div>
                         <div class="modal-body">
+
+                            <!-- ng-bind takes the string with HTML in it and removes the quotes around the string-->
                             <div ng-bind-html="wholeArticle"></div>
                             <a href="{{article.url}}">Source Article</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Readability modal ends-->
 
           </div>
         </div>
+        <!-- ng-repeat ends-->
+
     </div>
 </div>

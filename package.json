@@ -1,7 +1,7 @@
 {
-  "name": "reverse-news",
-  "version": "0.0.1",
-  "description": "news filter",
+  "name": "Revun",
+  "version": "1.0",
+  "description": "Filter unwanted articles by words",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,7 +21,7 @@
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
     "ng-sanitize": "^1.5.7",
-    "wow.js": "^1.2.2",
+    "node-readability": "^2.2.0",
     "wowjs": "^1.1.3"
   }
 }

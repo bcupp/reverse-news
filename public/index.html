@@ -8,16 +8,20 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <!-- initiated wow animation -->
     <script src="js/wow.min.js"></script>
     <script> new WOW().init(); </script>
-    <title>Reverse News</title>
-<div ng-controller ="controller1">
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("user_Mecn5D2nlXkLiTm3a2uI9");
-   })();
-</script> </div>
+
+    <title>Revun</title>
+    <!-- initiating email per directions from emailjs -->
+      <div ng-controller ="controller1">
+      <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+      <script type="text/javascript">
+         (function(){
+            emailjs.init("user_Mecn5D2nlXkLiTm3a2uI9");
+         })();
+      </script>
+      </div>
 </head>
 
 <body ng-controller='controller1'>
@@ -27,11 +31,10 @@
         <search-nav></search-nav>
         <ng-view></ng-view>
         <bottom-footer></bottom-footer>
+
+        <!--button for scroll to top functionality-->
         <input type="button"  class="goToTop btn btn-secondary mainButton" value="Scroll Top"  style="display:none;"  />
-
     </div>
-
-
 </body>
 
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js'></script>

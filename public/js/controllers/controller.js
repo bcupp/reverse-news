@@ -1,25 +1,26 @@
 var app = angular.module('myMod');
 
-
+// Primary Controller - injecting $scope, newService(factory), $location, $sce(ng-bind to let it know that the code was safe)
 app.controller('controller1', function($scope, newService, $location, $sce) {
-    //handoff from factory
+    //Array holding all news articles from Service Call
     var newsFeed;
-
-    newService.getNews().then(function(resultOfPromise) {
+    // Service call to get results from Tech Crunch
+    newService.getNewsTechCrunch().then(function(resultOfPromise) {
         newsFeed = resultOfPromise;
         newsArray($location.search().q);
     });
+    // Service call to get results from ABC News AU
     newService.getNewsAbcNewsAu().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
         newsArray($location.search().q);
     });
+    // Service call to get results from Ars Tech
     newService.getNewsArsTech().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
         newsArray($location.search().q);
     });
 
-
-    //sends article url to service which then sends it so server and runs it through readbility
+    //sends article url to service which then sends it so server and runs it through readbility and returns it to modal
     $scope.viewArticle = function(url, myModal) {
         $scope.wholeArticle = '';
         newService.getReadability(url).then(function(response) {
@@ -28,8 +29,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         });
     };
 
-
-
+    //Search filter functionality
     function newsArray(userInput) {
         var reverseFilter = [];
         var normFilter = [];
@@ -37,6 +37,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
           return;
         }
         newsFeed.forEach(function(article) {
+            //Spilting articles into arrays based on what searched on using regular expression to search WITH case sensitive search
             var n = article.title.search(new RegExp(userInput, "i"));
             if (n > -1) {
                 normFilter.push(article);
@@ -45,55 +46,53 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             };
         });
 
+        //Returning object with both search arrays results
         $scope.news = {
             reverseFilter: reverseFilter,
             normFilter: normFilter
         };
-
     };
 
+    //Change view AND display query in URL for reverseFilter
     $scope.userSearchReverse = function(userInput) {
         //only changes the view
         $location.path('/reverseFilter');
         $location.search('q', userInput);
-
     };
 
+    //Change view AND display query in URL for normalFilter
     $scope.userSearchNorm = function(userInput) {
         //only changes view now
         $location.path('/normalFilter');
         $location.search('q', userInput);
-
     };
 
-$scope.$on('$locationChangeSuccess', function(){
+    //Display results on selected view
+    $scope.$on('$locationChangeSuccess', function(){
 
-
-    //grab property out of it
-    console.log($scope.userInput = $location.search().q);
+    //Runs news array function with search parameter
     newsArray($location.search().q);
+
+    //When page switch remove jumbotron
     $(".jumbotron").slideUp("medium", function(){ $target.remove(); });
-    //$(".jumbotron").remove();
-    //$(".jumbotron").remove();
-    console.log("jazz");
-});
+    });
 
+    //Email
+    $scope.sendEmail = function (userEmail) {
+    emailjs.send("mailjet","template_Fj79lA9W",
 
-//email how will the presistent link work?
-$scope.sendEmail = function (userEmail) {
-  emailjs.send("mailjet","template_Fj79lA9W",
-  {sentName:"THE PROJECT",
-  userAddress: userEmail,
-  notes: "Your link: "+ location.href})
-  //based on the page it's on
-  //could send both but what if they only wanted one?
-  //
-  .then(function(response) {
-     console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-  }, function(err) {
-     console.log("FAILED. error=", err);
-  });
-  console.log(userEmail);
-};
+    //Templating email
+    {sentName:"REVUN",
+    userAddress: userEmail,
+    notes: "Your link: "+ location.href})
+
+    //console.log to see if it goes through
+    .then(function(response) {
+       console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+    }, function(err) {
+       console.log("FAILED. error=", err);
+    });
+       console.log(userEmail);
+    };
 
 });
