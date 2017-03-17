@@ -50,6 +50,7 @@ background-color: rgba(192,192,192,0.4);
 .article-title {
   display: table;
   margin: 0px;
+  width: 100%;
 }
 
 .article-title span:hover {
