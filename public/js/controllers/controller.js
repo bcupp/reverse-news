@@ -72,9 +72,7 @@ $scope.$on('$locationChangeSuccess', function(){
     //grab property out of it
     console.log($scope.userInput = $location.search().q);
     newsArray($location.search().q);
-    //$(".jumbotron").addClass("wow bounceOutDown");
-    //$(".jumbotron").hide('slow', function(){ $target.remove(); });
-    $(".jumbotron").slideUp("fast", function(){ $target.remove(); });
+    $(".jumbotron").slideUp("medium", function(){ $target.remove(); });
     //$(".jumbotron").remove();
     //$(".jumbotron").remove();
     console.log("jazz");

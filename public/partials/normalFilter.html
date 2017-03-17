@@ -1,8 +1,10 @@
 <div class="row-2">
     <div>
-        <div class="col-md-3 articleDiv wow bounceInUp" ng-repeat="article in news.normFilter" style="background-image: url({{article.urlToImage}})">
-            <h3>{{article.title}}</h3>
-            </p>
+        <div ng-repeat="article in news.normFilter" >
+          <div class="col-md-3 articleDiv wow bounceInUp" style="background-image: url({{article.urlToImage}})">
+            <a class="aStyles" data-target="#modal{{$index}}" data-toggle="modal" ng-click='viewArticle(article.url)'>
+               <h3 class='article-title'><span>{{article.title}}</span></h3>
+          </a>
             <div class="modal fade" id="modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog modal-lg center-block" role="document">
                     <div class="modal-content">
@@ -17,9 +19,8 @@
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-primary btn-lg" data-target="#modal{{$index}}" data-toggle="modal" ng-click='viewArticle(article.url)'>
-  Read
-</button>
+
+          </div>
         </div>
     </div>
 </div>
