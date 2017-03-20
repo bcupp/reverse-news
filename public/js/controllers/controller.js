@@ -47,8 +47,8 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             var j = article.title.search(new RegExp(userInputMultiple[1], "i"));
             console.log(n); // should have been able to use | but it didn't work
             console.log(j);
-
-            if (userInputMultiple[1] == ''){
+            console.log(userInputMultiple[1]);
+            if (userInputMultiple[1] == undefined){
               if (n > -1) {
                   normFilter.push(article);
               } else {
