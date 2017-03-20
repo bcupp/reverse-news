@@ -35,10 +35,14 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         var normFilter = [];
         //Eric Add
         var userInputMultiple = [];
+
+        // removes from 0 not 1 $('#userInputMultiple').replaceWith(/\s/g,'');
         userInputMultiple = userInput.split(',');
+        //$('#userInputMultiple').replaceWith(/\s/,'');
+        //userInputMultiple = userInputMultiple.replaceWith(/\s/,'');
         //
-        if (newsFeed === undefined){
-          return;
+        if (newsFeed === undefined) {
+            return;
         }
         newsFeed.forEach(function(article) {
             //Spilting articles into arrays based on what searched on using regular expression to search WITH case sensitive search
@@ -48,19 +52,19 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             console.log(n); // should have been able to use | but it didn't work
             console.log(j);
             console.log(userInputMultiple[1]);
-            if (userInputMultiple[1] == undefined){
-              if (n > -1) {
-                  normFilter.push(article);
-              } else {
-                  reverseFilter.push(article);
-              };
+            if (userInputMultiple[1] == undefined) {
+                if (n > -1) {
+                    normFilter.push(article);
+                } else {
+                    reverseFilter.push(article);
+                };
 
             } else if (userInputMultiple[1] !== '')
-            if (n > -1 || j > -1) {
-                normFilter.push(article);
-            } else {
-                reverseFilter.push(article);
-            };
+                if (n > -1 || j > -1) {
+                    normFilter.push(article);
+                } else {
+                    reverseFilter.push(article);
+                };
         }); //it's keeping only two instead of the whole list
 
         //Returning object with both search arrays results
@@ -85,31 +89,43 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
     };
 
     //Display results on selected view
-    $scope.$on('$locationChangeSuccess', function(){
+    $scope.$on('$locationChangeSuccess', function() {
 
-    //Runs news array function with search parameter
-    newsArray($location.search().q);
+        //Runs news array function with search parameter
+        newsArray($location.search().q);
 
-    //When page switch remove jumbotron
-    $(".jumbotron").slideUp("medium", function(){ $target.remove(); });
+        //When page switch remove jumbotron
+        $(".jumbotron").slideUp("medium", function() {
+            $target.remove();
+        });
     });
 
     //Email
-    $scope.sendEmail = function (userEmail) {
-    emailjs.send("mailjet","template_Fj79lA9W",
+    $scope.sendEmail = function(userEmail) {
+        emailjs.send("mailjet", "template_Fj79lA9W",
 
-    //Templating email
-    {sentName:"REVUN",
-    userAddress: userEmail,
-    notes: "Your link: "+ location.href})
+                //Templating email
+                {
+                    sentName: "REVUN",
+                    userAddress: userEmail,
+                    notes: "Your link: " + location.href
+                })
 
-    //console.log to see if it goes through
-    .then(function(response) {
-       console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-    }, function(err) {
-       console.log("FAILED. error=", err);
-    });
-       console.log(userEmail);
+            //console.log to see if it goes through
+            .then(function(response) {
+                console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+
+
+                //for closing modal
+                //$('#myModalLabel1').modal('toggle');
+            }, function(err) {
+                console.log("FAILED. error=", err);
+
+                //for closing modal
+                //$('#myModalLabel1').modal('toggle');
+            });
+
+        console.log(userEmail);
     };
 
 });
