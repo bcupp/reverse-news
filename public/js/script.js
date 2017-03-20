@@ -1,13 +1,13 @@
 $(document).ready(function(){
   $('.carousel').carousel({
-    interval: 5000,
-    cycle: true,
-    // pause: hover
-  })
+    interval: 6000,
+    cycle: true
+});
 });
 
 
-// function doAnimate( elems){
+
+// function doAnimate(elems){
 //   var animateEvent = 'webkitAnimationEnd animationend';
 //
 //   elems.each(function (){
@@ -18,7 +18,7 @@ $(document).ready(function(){
 //     });
 //   });
 // }
-//
+
   // var $newsCarousel = $('#carousel-example-generic'),
   //   $firstAnimatingElems = $newsCarousel.find('.item:first').find("[data-animation ^= 'animated']");
 //
