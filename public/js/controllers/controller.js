@@ -33,38 +33,49 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
     function newsArray(userInput) {
         var reverseFilter = [];
         var normFilter = [];
-        //Eric Add
         var userInputMultiple = [];
-
-        // removes from 0 not 1 $('#userInputMultiple').replaceWith(/\s/g,'');
-        userInputMultiple = userInput.split(',');
-        //$('#userInputMultiple').replaceWith(/\s/,'');
-        //userInputMultiple = userInputMultiple.replaceWith(/\s/,'');
-        //
+        //removing spaces off the ends
+        userInputMultiple = userInput.trim();
+        //within teh string replase multiple spaces with one
+        userInputMultiple = userInputMultiple.replace(/\s+/g,' ');
+        //split by , and any number of spaces
+        userInputMultiple = userInputMultiple.split(/\s*,\s*/);
+        console.log(userInputMultiple);
+        //checks if userInput is seperates by spaces or by commas
         if (newsFeed === undefined) {
             return;
         }
+        //come back to the idea to search by spaces as well as commas
+
         newsFeed.forEach(function(article) {
             //Spilting articles into arrays based on what searched on using regular expression to search WITH case sensitive search
             //maybe do a repeat to do as many as the user wants?
-            var n = article.title.search(new RegExp(userInputMultiple[0], "i"));
-            var j = article.title.search(new RegExp(userInputMultiple[1], "i"));
-            console.log(n); // should have been able to use | but it didn't work
-            console.log(j);
-            console.log(userInputMultiple[1]);
-            if (userInputMultiple[1] == undefined) {
-                if (n > -1) {
+
+              var i = 0;
+              var newArray = [];
+             newArray[i] = article.title.search(new RegExp(userInputMultiple[i], "i"));
+              console.log(userInputMultiple[1]);
+            if (userInputMultiple[i] == undefined) {
+                if (newArray[i] > -1) {
                     normFilter.push(article);
                 } else {
                     reverseFilter.push(article);
                 };
 
-            } else if (userInputMultiple[1] !== '')
-                if (n > -1 || j > -1) {
+            } else
+            if (userInputMultiple[i] !== ''){
+
+            if (newArray.forEach(function(comparison){
+                if (comparison > -1){
                     normFilter.push(article);
+
                 } else {
                     reverseFilter.push(article);
+
                 };
+              }));
+                }
+                  i++;
         }); //it's keeping only two instead of the whole list
 
         //Returning object with both search arrays results
@@ -72,6 +83,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             reverseFilter: reverseFilter,
             normFilter: normFilter
         };
+
     };
 
     //Change view AND display query in URL for reverseFilter
@@ -117,12 +129,12 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
 
 
                 //for closing modal
-                //$('#myModalLabel1').modal('toggle');
+              $('#emailModal').modal('toggle');
             }, function(err) {
                 console.log("FAILED. error=", err);
 
                 //for closing modal
-                //$('#myModalLabel1').modal('toggle');
+                $('#emailModal').modal('toggle');
             });
 
         console.log(userEmail);
