@@ -1,10 +1,11 @@
 $(document).ready(function(){
   $('.carousel').carousel({
-    interval: 3000,
+    interval: 5000,
     cycle: true,
     // pause: hover
   })
 });
+
 
 // function doAnimate( elems){
 //   var animateEvent = 'webkitAnimationEnd animationend';
@@ -18,8 +19,8 @@ $(document).ready(function(){
 //   });
 // }
 //
-// var $newsCarousel = $('#carousel-example-generic'),
-//   $firstAnimatingElems = $newsCarousel.find('.item:first').find("[data-animation ^= 'animated']");
+  // var $newsCarousel = $('#carousel-example-generic'),
+  //   $firstAnimatingElems = $newsCarousel.find('.item:first').find("[data-animation ^= 'animated']");
 //
 // $newsCarousel.carousel();
 // doAnimate($firstAnimatingElems);
