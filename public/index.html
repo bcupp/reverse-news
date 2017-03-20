@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel='images' href='public/img' />
     <!-- initiated wow animation -->
     <script src="js/wow.min.js"></script>
     <script> new WOW().init(); </script>
@@ -27,6 +28,17 @@
 <body ng-controller='controller1'>
 
     <div class='container-fluid'>
+      <header class = 'header-logo'>
+        <div class = 'row'>
+          <div class = 'small-12 large-3 columns'>
+            <h1 id = 'header-logo'>
+              <img src = 'img/revun.png'/height="80" width="170">
+              <!-- <a href = '/'>Revun</a> -->
+            </h1>
+          </div>
+        </div>
+      </header>
+
         <jumbotron ></jumbotron>
         <search-nav></search-nav>
         <ng-view></ng-view>
