@@ -33,18 +33,35 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
     function newsArray(userInput) {
         var reverseFilter = [];
         var normFilter = [];
+        //Eric Add
+        var userInputMultiple = [];
+        userInputMultiple = userInput.split(',');
+        //
         if (newsFeed === undefined){
           return;
         }
         newsFeed.forEach(function(article) {
             //Spilting articles into arrays based on what searched on using regular expression to search WITH case sensitive search
-            var n = article.title.search(new RegExp(userInput, "i"));
-            if (n > -1) {
+            //maybe do a repeat to do as many as the user wants?
+            var n = article.title.search(new RegExp(userInputMultiple[0], "i"));
+            var j = article.title.search(new RegExp(userInputMultiple[1], "i"));
+            console.log(n); // should have been able to use | but it didn't work
+            console.log(j);
+
+            if (userInputMultiple[1] == ''){
+              if (n > -1) {
+                  normFilter.push(article);
+              } else {
+                  reverseFilter.push(article);
+              };
+
+            } else if (userInputMultiple[1] !== '')
+            if (n > -1 || j > -1) {
                 normFilter.push(article);
             } else {
                 reverseFilter.push(article);
             };
-        });
+        }); //it's keeping only two instead of the whole list
 
         //Returning object with both search arrays results
         $scope.news = {
