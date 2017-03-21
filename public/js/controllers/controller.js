@@ -38,6 +38,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         var normFilter = [];
         var userInputMultiple = [];
         //removing spaces off the ends
+        if (userInput != undefined){
         userInputMultiple = userInput.trim();
         //within teh string replase multiple spaces with one
         userInputMultiple = userInputMultiple.replace(/\s+/g, ' ');
@@ -45,6 +46,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         userInputMultiple = userInputMultiple.split(/\s*,\s*/);
         console.log(userInputMultiple);
         //checks if userInput is seperates by spaces or by commas
+      }
         if (newsFeed === undefined) {
             return;
         }
