@@ -1,6 +1,7 @@
 <div class="buttonArea">
-
-  <button class="toggleButton btn btn-secondary mainButton"  ng-click="onOff.isSelected = true; reverseSelect()" ng-class="{false: 'buttonSelected', true: 'onOff'}[!onOff.isSelected]">Not Normal Search</button>
-   <button class="toggleButton btn btn-secondary mainButton"  ng-click="onOff.isSelected = false; normalSelect()" ng-class="{true: 'buttonSelected', false: 'blue'}[!onOff.isSelected]">Normal Search</button>
+    <!-- on button click this button switched the view and based on the current url/view it changes the class on the view buttons -->
+    <button id='reverseSearchId' class="toggleButton btn btn-secondary mainButton" ng-class="{buttonSelected: currentView === 'reverseFilter'}" ng-click="reverseSelect()">Not Normal Search</button>
+    <!-- on button click this button switched the view and based on the current url/view it changes the class on the view buttons -->
+    <button id='normalSearchId' class="toggleButton btn btn-secondary mainButton" ng-class="{buttonSelected: currentView === 'normalFilter'}" ng-click="normalSelect()">Normal Search</button>
 
 </div>

@@ -1,84 +1,84 @@
-<nav class="navbar navbar-default searchStyles" role="navigation" ng-controller='controller1' >
+<nav class="navbar navbar-default searchStyles" role="navigation" ng-controller='controller1'>
 
-  <div class="navbar">
-    <form role="search">
-      <div class="form-group ">
-        <!-- The Revun search bar -->
-        <input type="text" class="form-control " ng-model="userInput" />
-        <!--Search buttons-->
-        <button type="button" name="button" class="btn btn-secondary mainButton" ng-click='userSearchNorm(userInput)'>Submit</button>
-        <!-- Button inside of the modal-->
-          <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModal">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="modal-title" id="myModalLabel1">Tell us your email!</h4>
-                </div>
-          <!-- Modal Body -->
-          <div class="modal-body">
-            <div class="input-group">
+    <div class="navbar">
+        <form role="search">
+            <div class="form-group ">
+                <!-- The Revun search bar -->
+                <input type="text" class="form-control " ng-model="userInput" />
+                <!--Search buttons-->
+                <button type="button" name="button" class="btn btn-secondary mainButton" ng-click='userSearchNorm(userInput)'>Submit</button>
+                <!-- Button inside of the modal-->
+                <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModal">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel1">Tell us your email!</h4>
+                            </div>
+                            <!-- Modal Body -->
+                            <div class="modal-body">
+                                <div class="input-group">
 
-              <div class="row">
-                <div class="col-lg-12">
-                  <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Your Email" ng-model="userEmail">
-                      <span class="input-group-btn">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Your Email" ng-model="userEmail">
+                                                <span class="input-group-btn">
                         <button class="btn btn-secondary" type="button" ng-click='sendEmail(userEmail)'>Email!</button>
                       </span>
-                  </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal Body Ends! -->
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!-- Modal Body Ends! -->
-        </div>
-      </div>
-    </div>
-    <!-- Button to launch email modal-->
-    <button type="button" class="btn btn-secondary mainButton" data-toggle="modal" data-target="#emailModal">
+                <!-- Button to launch email modal-->
+                <button type="button" class="btn btn-secondary mainButton" data-toggle="modal" data-target="#emailModal">
       Inbox it!
     </button>
 
-      </div>
+            </div>
 
-    </form>
-  </div>
+        </form>
+    </div>
 
 </nav>
 
 
 <div class="row-2">
     <div>
-      <!--repeats the articles in the div-->
-        <div ng-repeat="article in news.normFilter" >
-          <div class="col-md-3 articleDiv wow bounceInUp" style="background-image: url({{article.urlToImage}})">
+        <!--repeats the articles in the div-->
+        <div ng-repeat="article in news.normFilter">
+            <div class="col-md-3 articleDiv wow bounceInUp" style="background-image: url({{article.urlToImage}})">
 
-          <!-- content wrap in <a> to make image square clickable-->
-            <a class="aStyles" data-target="#modal{{$index}}" data-toggle="modal" ng-click='viewArticle(article.url)'>
-               <h3 class='article-title'><span>{{article.title}}</span></h3>
-            </a>
+                <!-- content wrap in <a> to make image square clickable-->
+                <a class="aStyles" data-target="#modal{{$index}}" data-toggle="modal" ng-click='viewArticle(article.url)'>
+                    <h3 class='article-title'><span>{{article.title}}</span></h3>
+                </a>
 
-            <!-- Readability modal starts-->
-            <div class="modal fade" id="modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog modal-lg center-block" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h2 class="modal-title" id="myModalLabel">{{article.title}}</h2>
-                        </div>
-                        <div class="modal-body">
+                <!-- Readability modal starts-->
+                <div class="modal fade" id="modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog modal-lg center-block" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h2 class="modal-title" id="myModalLabel">{{article.title}}</h2>
+                            </div>
+                            <div class="modal-body">
 
-                            <!-- ng-bind takes the string with HTML in it and removes the quotes around the string-->
-                            <div ng-bind-html="wholeArticle"></div>
-                            <a href="{{article.url}}">Source Article</a>
+                                <!-- ng-bind takes the string with HTML in it and removes the quotes around the string-->
+                                <div ng-bind-html="wholeArticle"></div>
+                                <a href="{{article.url}}">Source Article</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Readability modal ends-->
+                <!-- Readability modal ends-->
 
-          </div>
+            </div>
         </div>
         <!-- ng-repeat ends-->
 

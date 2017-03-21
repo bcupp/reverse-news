@@ -4,6 +4,9 @@ var app = angular.module('myMod');
 app.controller('controller1', function($scope, newService, $location, $sce) {
     //Array holding all news articles from Service Call
     var newsFeed;
+    //initialized currentView to be used in the toggleView view as a ng-class
+    $scope.currentView = '';
+
     // Service call to get results from Tech Crunch
     newService.getNewsTechCrunch().then(function(resultOfPromise) {
         newsFeed = resultOfPromise;
@@ -33,8 +36,8 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
     function newsArray(userInput) {
         var reverseFilter = [];
         var normFilter = [];
-        if (newsFeed === undefined){
-          return;
+        if (newsFeed === undefined) {
+            return;
         }
         newsFeed.forEach(function(article) {
             //Spilting articles into arrays based on what searched on using regular expression to search WITH case sensitive search
@@ -54,11 +57,11 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
     };
     //change view with view buttons
     $scope.normalSelect = function() {
-      $location.path('/normalFilter');
+        $location.path('/normalFilter');
     };
     //change view with view buttons
     $scope.reverseSelect = function() {
-      $location.path('/reverseFilter');
+        $location.path('/reverseFilter');
     };
 
     //Change view AND display query in URL for reverseFilter
@@ -76,31 +79,45 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
     };
 
     //Display results on selected view
-    $scope.$on('$locationChangeSuccess', function(){
+    $scope.$on('$locationChangeSuccess', function() {
 
-    //Runs news array function with search parameter
-    newsArray($location.search().q);
+        //Runs news array function with search parameter
+        newsArray($location.search().q);
 
-    //When page switch remove jumbotron
-    $(".jumbotron").slideUp("medium", function(){ $target.remove(); });
+        //sets $scope.currentView to be used in toggleView view as selected class based off url path to show selected button
+        if ($location.$$path == '/normalFilter') {
+            $scope.currentView = 'normalFilter';
+        }
+        //sets $scope.currentView to be used in toggleView view as selected class based off url path to show selected button
+        if ($location.$$path == '/reverseFilter') {
+            $scope.currentView = 'reverseFilter';
+        }
+        console.log($location.$$path);
+
+        //When page switch remove jumbotron
+        $(".jumbotron").slideUp("medium", function() {
+            $target.remove();
+        });
     });
 
     //Email
-    $scope.sendEmail = function (userEmail) {
-    emailjs.send("mailjet","template_Fj79lA9W",
+    $scope.sendEmail = function(userEmail) {
+        emailjs.send("mailjet", "template_Fj79lA9W",
 
-      //Templating email
-      {sentName:"REVUN",
-      userAddress: userEmail,
-      notes: "Your link: "+ location.href})
+                //Templating email
+                {
+                    sentName: "REVUN",
+                    userAddress: userEmail,
+                    notes: "Your link: " + location.href
+                })
 
-      //console.log to see if it goes through
-      .then(function(response) {
-         console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-      }, function(err) {
-         console.log("FAILED. error=", err);
-      });
-       console.log(userEmail);
+            //console.log to see if it goes through
+            .then(function(response) {
+                console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+            }, function(err) {
+                console.log("FAILED. error=", err);
+            });
+        console.log(userEmail);
     };
 
 });
