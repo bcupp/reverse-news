@@ -1,0 +1,5 @@
+{
+  "name": "Revun",
+  "description": "App for filtering the news",
+  "image": "heroku/nodejs"
+}
