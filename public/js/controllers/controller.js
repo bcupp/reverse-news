@@ -27,8 +27,32 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             var temp = newService.returnArticle();
             $scope.wholeArticle = $sce.trustAsHtml(temp);
         });
-        $scope.nextViewArticle = temp[1];
     };
+    // $scope.next = function(reverseFilter, index){
+    //   if((index + 1) > (reverseFilter.length - 1)){
+    //     return;
+    //   }else{
+    //     reverseFilter.show = false;
+    //     reverseFilter[index+1].show = true;
+    //   }
+    // }
+
+    // $scope.viewNextArticle = function(myModal){
+    //   var next = newService.returnArticle();
+    //   for (next = 0; next > $scope.viewArticle.length; ++1 ){
+    //     console.log('hi there');
+    //   }
+    // }
+//
+//     $scope.nextViewArticle = function(url, myModal) {
+//       newService.getReadability(url).then(function(response) {
+//           var next = newService.returnArticle(
+//           for (next = 0; next > $scope.viewArticle.length; ++ 1 ){
+//             console.log('hi there');
+//     )}  $scope.wholeArticle = $sce.trustAsHtml(temp);
+//   )};
+// };
+
 
 
 
@@ -82,6 +106,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
 
     //Runs news array function with search parameter
     newsArray($location.search().q);
+
 
     //When page switch remove jumbotron
     $(".jumbotron").slideUp("medium", function(){ $target.remove(); });

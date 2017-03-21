@@ -2,7 +2,7 @@
     <div>
       <!--repeats the articles in the div-->
         <div ng-repeat="article in news.normFilter" >
-          <div class="col-md-3 articleDiv wow bounceInUp" style="background-image: url({{article.urlToImage}})">
+          <div class="col-xs-12 col-sm-4 col-md-3 articleDiv wow bounceInUp" style="background-image: url({{article.urlToImage}})">
 
           <!-- content wrap in <a> to make image square clickable-->
             <a class="aStyles" data-target="#modal{{$index}}" data-toggle="modal" ng-click='viewArticle(article.url)'>
@@ -15,7 +15,6 @@
                     <div class="modal-content">
                         <div class="modal-header">
 
-                            <a class="nextSlide" data-target="next(#modal{{$index}})"  ng-click='nextViewArticle(article.url)'>Next</a>
 
                             <button type="button" class="close" data-dismiss="modal1" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h2 class="modal-title" id="myModalLabel">{{article.title}}</h2>

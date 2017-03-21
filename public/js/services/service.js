@@ -67,4 +67,6 @@ app.factory('newService', function($http) {
     function returnArticle() {
         return articleContent;
     };
+
+    
 });

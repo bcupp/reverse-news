@@ -2,7 +2,7 @@
     <div>
       <!--repeats the articles in the div-->
         <div ng-repeat="article in news.reverseFilter" >
-          <div class="col-md-3 articleDiv wow bounceInUp" style="background-image: url({{article.urlToImage}})">
+          <div class="col-xs-12 col-sm-6 col-md-3 articleDiv wow bounceInUp" style="background-image: url({{article.urlToImage}})">
 
           <!-- content wrap in <a> to make image square clickable-->
             <a class="aStyles" data-target="#modal{{$index}}" data-toggle="modal" ng-click='viewArticle(article.url)'>

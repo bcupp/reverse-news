@@ -25,8 +25,8 @@ app.post('/get-readability', function(req, res){
   });
 });
 
-
-var server = app.listen(3000, function() {
+var port = process.env.PORT || 3000;
+var server = app.listen(port, function() {
   var port = server.address().port;
   console.log('Server running at http://localhost:%s', port);
 });
