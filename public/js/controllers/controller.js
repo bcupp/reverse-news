@@ -27,8 +27,18 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             var temp = newService.returnArticle();
             $scope.wholeArticle = $sce.trustAsHtml(temp);
         });
+        $scope.nextViewArticle = temp[1];
     };
 
+
+
+      // if(($scope.viewArticle + 1) > ($scope.viewArticle.length - 1)){
+      //   return;
+      // } else{
+      //   viewArticle.show = false;
+      //   $scope.viewArticle[$scope.viewArticle+1].show = true;
+      // }
+      // };
     //Search filter functionality
     function newsArray(userInput) {
         var reverseFilter = [];
