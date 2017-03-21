@@ -37,7 +37,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         //removing spaces off the ends
         userInputMultiple = userInput.trim();
         //within teh string replase multiple spaces with one
-        userInputMultiple = userInputMultiple.replace(/\s+/g,' ');
+        userInputMultiple = userInputMultiple.replace(/\s+/g, ' ');
         //split by , and any number of spaces
         userInputMultiple = userInputMultiple.split(/\s*,\s*/);
         console.log(userInputMultiple);
@@ -51,32 +51,27 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             //Spilting articles into arrays based on what searched on using regular expression to search WITH case sensitive search
             //maybe do a repeat to do as many as the user wants?
 
-              var i = 0;
-              var newArray = [];
-             newArray[i] = article.title.search(new RegExp(userInputMultiple[i], "i"));
-              console.log(userInputMultiple[1]);
-            if (userInputMultiple[i] == undefined) {
-                if (newArray[i] > -1) {
-                    normFilter.push(article);
-                } else {
-                    reverseFilter.push(article);
-                };
+            var i = 0;
+            var keywordMatches = []; // array of truey or falsey whether each keyword matched
+            var atLeastOneKeywordMatches;
 
-            } else
-            if (userInputMultiple[i] !== ''){
+            userInputMultiple.forEach(function(test){
+              if(test){
+              keywordMatches[i] = Boolean( article.title.match(new RegExp(userInputMultiple[i], "i")) );
+              if(keywordMatches[i]){
+                atLeastOneKeywordMatches = true;
+              }
+              i++;
+            }
+            });
 
-            if (newArray.forEach(function(comparison){
-                if (comparison > -1){
-                    normFilter.push(article);
+            if (atLeastOneKeywordMatches) {
+              normFilter.push(article);
+            } else {
+              reverseFilter.push(article);
+            }
 
-                } else {
-                    reverseFilter.push(article);
-
-                };
-              }));
-                }
-                  i++;
-        }); //it's keeping only two instead of the whole list
+        });
 
         //Returning object with both search arrays results
         $scope.news = {
@@ -129,7 +124,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
 
 
                 //for closing modal
-              $('#emailModal').modal('toggle');
+                $('#emailModal').modal('toggle');
             }, function(err) {
                 console.log("FAILED. error=", err);
 
