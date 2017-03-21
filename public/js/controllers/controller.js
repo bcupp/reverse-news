@@ -52,6 +52,14 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             normFilter: normFilter
         };
     };
+    //change view with view buttons
+    $scope.normalSelect = function() {
+      $location.path('/normalFilter');
+    };
+    //change view with view buttons
+    $scope.reverseSelect = function() {
+      $location.path('/reverseFilter');
+    };
 
     //Change view AND display query in URL for reverseFilter
     $scope.userSearchReverse = function(userInput) {
@@ -81,17 +89,17 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
     $scope.sendEmail = function (userEmail) {
     emailjs.send("mailjet","template_Fj79lA9W",
 
-    //Templating email
-    {sentName:"REVUN",
-    userAddress: userEmail,
-    notes: "Your link: "+ location.href})
+      //Templating email
+      {sentName:"REVUN",
+      userAddress: userEmail,
+      notes: "Your link: "+ location.href})
 
-    //console.log to see if it goes through
-    .then(function(response) {
-       console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-    }, function(err) {
-       console.log("FAILED. error=", err);
-    });
+      //console.log to see if it goes through
+      .then(function(response) {
+         console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
+      }, function(err) {
+         console.log("FAILED. error=", err);
+      });
        console.log(userEmail);
     };
 

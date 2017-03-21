@@ -24,6 +24,14 @@ app.directive('jumbotron', function(){
   };
 });
 
+app.directive('toggleView', function(){
+  return{
+    restrict:'EA',
+    replace: true,
+    templateUrl:"partials/toggleView.html"
+  };
+});
+
 app.directive('searchNav', function(){
   return{
     restrict:'EA',
