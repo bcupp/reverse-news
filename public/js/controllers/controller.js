@@ -4,6 +4,9 @@ var app = angular.module('myMod');
 app.controller('controller1', function($scope, newService, $location, $sce) {
     //Array holding all news articles from Service Call
     var newsFeed;
+    //initialized currentView to be used in the toggleView view as a ng-class
+    $scope.currentView = '';
+
     // Service call to get results from Tech Crunch
     newService.getNewsTechCrunch().then(function(resultOfPromise) {
         newsFeed = resultOfPromise;
@@ -81,6 +84,14 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         };
 
     };
+    //change view with view buttons
+    $scope.normalSelect = function() {
+        $location.path('/normalFilter');
+    };
+    //change view with view buttons
+    $scope.reverseSelect = function() {
+        $location.path('/reverseFilter');
+    };
 
     //Change view AND display query in URL for reverseFilter
     $scope.userSearchReverse = function(userInput) {
@@ -104,6 +115,15 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         //Runs news array function with search parameter
         newsArray($location.search().q);
 
+        //sets $scope.currentView to be used in toggleView view as selected class based off url path to show selected button
+        if ($location.$$path == '/normalFilter') {
+            $scope.currentView = 'normalFilter';
+        }
+        //sets $scope.currentView to be used in toggleView view as selected class based off url path to show selected button
+        if ($location.$$path == '/reverseFilter') {
+            $scope.currentView = 'reverseFilter';
+        }
+        console.log($location.$$path);
         //When page switch remove jumbotron
         $(".jumbotron").slideUp("medium", function() {
             $target.remove();
@@ -124,8 +144,6 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             //console.log to see if it goes through
             .then(function(response) {
                 console.log("SUCCESS. status=%d, text=%s", response.status, response.text);
-
-
                 //for closing modal
                 $('#emailModal').modal('toggle');
             }, function(err) {
@@ -134,7 +152,6 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
                 //for closing modal
                 $('#emailModal').modal('toggle');
             });
-
         console.log(userEmail);
     };
 
