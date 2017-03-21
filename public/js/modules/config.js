@@ -12,9 +12,9 @@ app.config(function($routeProvider, $locationProvider ) {
             controller: 'controller1',
             templateUrl: 'partials/normalFilter.html'
         })
-        .otherwise('/normalFilter', {
+        .otherwise('/reverseFilter', {
             controller: 'controller1',
-            templateUrl: 'partials/normalFilter.html'
+            templateUrl: 'partials/reverseFilter.html'
         });
     $locationProvider.html5Mode(false).hashPrefix('');
 

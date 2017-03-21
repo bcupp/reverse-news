@@ -63,6 +63,32 @@ app.factory('newService', function($http) {
         return promise;
     };
 
+//New test with pocket
+// function getPocket() {
+//     var promise = $http({
+//         method: 'POST',
+//         Host: getpocket.com,
+//         url: 'https://getpocket.com/v3/oauth/request',
+//         headers: {
+//           'Content-Type': 'application/json'
+//         },
+//        data: {"consumer_key":"64786-b84711b4b7ccdaec59496d52",
+//        "redirect_uri":"pocketapp1234:authorizationFinished",
+//        'X-Accept': "application/json"
+//         }
+//     }).then(function sucessfullCallback(response) {
+//         //return newsQueue = response.data.articles;
+//         console.log("Oh hi");
+//     });
+//     return promise;
+// };
+//POST /v3/oauth/request HTTP/1.1
+
+
+
+
+
+
     //Makes call to return the article controller
     function returnArticle() {
         return articleContent;
