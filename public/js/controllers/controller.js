@@ -121,3 +121,5 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
     };
 
 });
+
+//it just works
