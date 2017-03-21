@@ -69,6 +69,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
               normFilter.push(article);
             } else {
               reverseFilter.push(article);
+
             }
 
         });
@@ -86,6 +87,8 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         //only changes the view
         $location.path('/reverseFilter');
         $location.search('q', userInput);
+
+
     };
 
     //Change view AND display query in URL for normalFilter
