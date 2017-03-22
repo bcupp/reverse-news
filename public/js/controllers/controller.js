@@ -156,6 +156,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
                 //for closing modal
                 $('#emailModal').modal('toggle');
             });
+
     };
 
 });
