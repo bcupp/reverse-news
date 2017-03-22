@@ -33,13 +33,6 @@ body {
     padding-top: 0px;
 }
 
-@media screen and (max-width: 760px)
-bootstrap.css:4979
-.container .jumbotron, .container-fluid .jumbotron {
-  padding-right: 60px;
-  padding-left: 60px;
-}
-
 .header-logo{
     -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
@@ -190,6 +183,7 @@ a:first-child {
 .modal-title.ng-binding{
     font-weight: bolder;
 }
+
 blockquote{
     font-style: italic;
     font-size: 15px;

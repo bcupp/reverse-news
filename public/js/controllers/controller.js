@@ -31,41 +31,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             $scope.wholeArticle = $sce.trustAsHtml(temp);
         });
     };
-    // $scope.next = function(reverseFilter, index){
-    //   if((index + 1) > (reverseFilter.length - 1)){
-    //     return;
-    //   }else{
-    //     reverseFilter.show = false;
-    //     reverseFilter[index+1].show = true;
-    //   }
-    // }
 
-    // $scope.viewNextArticle = function(myModal){
-    //   var next = newService.returnArticle();
-    //   for (next = 0; next > $scope.viewArticle.length; ++1 ){
-    //     console.log('hi there');
-    //   }
-    // }
-//
-//     $scope.nextViewArticle = function(url, myModal) {
-//       newService.getReadability(url).then(function(response) {
-//           var next = newService.returnArticle(
-//           for (next = 0; next > $scope.viewArticle.length; ++ 1 ){
-//             console.log('hi there');
-//     )}  $scope.wholeArticle = $sce.trustAsHtml(temp);
-//   )};
-// };
-
-
-
-
-      // if(($scope.viewArticle + 1) > ($scope.viewArticle.length - 1)){
-      //   return;
-      // } else{
-      //   viewArticle.show = false;
-      //   $scope.viewArticle[$scope.viewArticle+1].show = true;
-      // }
-      // };
     //Search filter functionality
     function newsArray(userInput) {
         var reverseFilter = [];
@@ -74,7 +40,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         //removing spaces off the ends
         if (userInput != undefined){
         userInputMultiple = userInput.trim();
-        //within teh string replase multiple spaces with one
+        //within the string replase multiple spaces with one
         userInputMultiple = userInputMultiple.replace(/\s+/g, ' ');
         //split by , and any number of spaces
         userInputMultiple = userInputMultiple.split(/\s*,\s*/);
@@ -91,7 +57,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             //maybe do a repeat to do as many as the user wants?
 
             var i = 0;
-            var keywordMatches = []; // array of truey or falsey whether each keyword matched
+            var keywordMatches = []; //
             var atLeastOneKeywordMatches;
 
             userInputMultiple.forEach(function(test){
@@ -105,8 +71,10 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
             });
 
             if (atLeastOneKeywordMatches) {
+              //push articles into normFilter
               normFilter.push(article);
             } else {
+              //push articles into reverseFilter
               reverseFilter.push(article);
 
             }
@@ -120,6 +88,7 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         };
 
     };
+
     //change view with view buttons
     $scope.normalSelect = function() {
         $location.path('/normalFilter');
@@ -134,8 +103,6 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         //only changes the view
         $location.path('/reverseFilter');
         $location.search('q', userInput);
-
-
     };
 
     //Change view AND display query in URL for normalFilter
@@ -189,9 +156,6 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
                 //for closing modal
                 $('#emailModal').modal('toggle');
             });
-        console.log(userEmail);
     };
 
 });
-
-//it just works
