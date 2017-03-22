@@ -20,7 +20,13 @@ app.directive('jumbotron', function(){
   return{
     restrict:'EA',
     replace: true,
-    templateUrl:"partials/jumbotron.html"
+    templateUrl:"partials/jumbotron.html",
+    controller: function(){
+      $('.carousel').carousel({
+        interval: 5000,
+        cycle: true
+      });
+    }
   };
 });
 
