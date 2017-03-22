@@ -1,8 +1,10 @@
+
 <div class="buttonArea">
-
+    <div class = "toggle-title">
+    
+    </div>
     <!-- on button click this button switched the view and based on the current url/view it changes the class on the view buttons -->
-    <button id='reverseSearchId' class="toggleButton btn btn-secondary mainButton" ng-class="{buttonSelected: currentView === 'reverseFilter'}" ng-click="reverseSelect()">Remove</button>
+    <button id='reverseSearchId' class="toggleButton btn btn-secondary mainButton" ng-class="{buttonSelected: currentView === 'reverseFilter'}" ng-click="reverseSelect()">Hide Search</button>
     <!-- on button click this button switched the view and based on the current url/view it changes the class on the view buttons -->
-    <button id='normalSearchId' class="toggleButton btn btn-secondary mainButton" ng-class="{buttonSelected: currentView === 'normalFilter'}" ng-click="normalSelect()">Reveal</button>
-
+    <button id='normalSearchId' class="toggleButton btn btn-secondary mainButton" ng-class="{buttonSelected: currentView === 'normalFilter'}" ng-click="normalSelect()">Show Search</button>
 </div>

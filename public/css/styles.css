@@ -3,8 +3,8 @@
 @import url('https://fonts.googleapis.com/css?family=Heebo');
 
 @font-family{
-  font-family: 'Heebo', sans-serif;
-  }
+    font-family: 'Heebo', sans-serif;
+}
 
 html {
     position: relative;
@@ -18,22 +18,26 @@ body {
     font-size: 17px;
 }
 
-
 .container-fluid {
     padding: 0px;
 }
-
-
 
 /* jumbotron Style*/
 .jumbotron {
     background: url('../img/woodtable.jpg')no-repeat center;
     background-size: cover;
-    color: #00ABA0;
-    text-shadow: 2px 2px 1px rgba(0,0,0,0.2);
-    margin: 0px;
+    color: #77BA46;
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
+    margin-bottom: 0px;
     border-radius: 0px;
     padding-top: 0px;
+}
+
+@media screen and (max-width: 760px)
+bootstrap.css:4979
+.container .jumbotron, .container-fluid .jumbotron {
+  padding-right: 60px;
+  padding-left: 60px;
 }
 
 .header-logo{
@@ -56,6 +60,7 @@ body {
     border-radius: 0px;
     height: auto;
     width: 100%;
+    padding: 131px;
 }
 
 .carousel-indicators li {
@@ -65,12 +70,13 @@ body {
 #carousel-example-generic{
     position: relative;
     margin:auto;
-    padding: 10%;
+    padding: 3%;
     height: 100%;
 }
 
-.img-container{
-    height: 200px;
+.jumbotron .img-container{
+    height: 300%;
+    padding-bottom: 10px;
 }
 
 #header-logo{
@@ -89,33 +95,27 @@ body {
 }
 
 .carousel-fade .carousel-inner .item {
-  opacity: 0;
-  -webkit-transition-property: opacity;
-  -moz-transition-property: opacity;
-  -o-transition-property: opacity;
-  transition-property: opacity;
+    opacity: 0;
+    -webkit-transition-property: opacity;
+    -moz-transition-property: opacity;
+    -o-transition-property: opacity;
+    transition-property: opacity;
 }
 .carousel-fade .carousel-inner .active {
-  opacity: 1 !important;
+    opacity: 1 !important;
 }
 .carousel-fade .carousel-inner .active.left,
 .carousel-fade .carousel-inner .active.right {
-  left: 3;
-  opacity: 0;
-
+    left: 3;
+    opacity: 0;
 }
-/*.carousel-fade .carousel-inner .next.left,
-.carousel-fade .carousel-inner .prev.right {
-  opacity: 1;
-}*/
-/*.carousel-fade .carousel-control {
-  z-index: 2;
-}*/
-/*Navigation/Search bar style*/
 
+
+/*Navigation/Search bar style*/
 .navbar {
     padding-top: 10px;
     margin: 0px;
+    background: -webkit-gradient(linear, left top, right top, from(#5A8C35), color-stop(.5,#77BA46 ), to(#5A8C35));
 }
 
 .searchStyles {
@@ -129,30 +129,29 @@ body {
 }
 
 .searchStyles input {
-  border-radius: 0;
+    border-radius: 0;
 }
 
 .buttonArea {
-  text-align: center;
-  font-size: 0;
-  background-color: #77BA46;
-
-}
+    text-align: center;
+    font-size: 0;
+    background-color: #77BA46;
+    background: -webkit-gradient(linear, left top, right top, from(#5A8C35), color-stop(.5,#77BA46 ), to(#5A8C35));
+    }
 
 /* Article style*/
-
 /*modal*/
-
 .article-title span{
     color: white;
-    font-family: 'Heebo', sans-serif;;
+    font-family: 'Heebo', sans-serif;
+    font-size: 36px;
     text-align: center;
-    text-shadow: 2px 2px 1px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 1px rgba(0,0,0,0.9);
     height: 500px;
     padding: 0 5px;
     vertical-align: middle;
     display: table-cell;
-    background-color: rgba(192,192,192,0.4);
+    background-color: rgba(192,192,192,0.6);
 }
 
 .article-title {
@@ -189,11 +188,11 @@ a:first-child {
 }
 
 .modal-title.ng-binding{
-  font-weight: bolder;
+    font-weight: bolder;
 }
 blockquote{
-  font-style: italic;
-  font-size: 15px;
+    font-style: italic;
+    font-size: 15px;
 }
 
 img {
@@ -215,73 +214,85 @@ h1, h2, h3, h4, h5, h6 {
     height: 20px;
     background-color: #77BA46;
     color: white;
-    padding: 2%;
+    padding: 4%;
+    background: -webkit-gradient(linear, left top, right top, from(#5A8C35), color-stop(.5,#77BA46 ), to(#5A8C35));
 }
 
 /* BUTTONS Style */
 .mainButton {
-    margin-top: 15px;
+    margin-top: 8px;
     border-radius: 0px;
     margin-bottom: 0px;
     background-color: grey;
 }
 
-.btn {
-	background-color:#4C997E;
-	-moz-border-radius:0;
-	-webkit-border-radius:0;
-	border-radius: 0;
-	/*border:1px solid #ffffff;*/
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-size:15px;
-	padding:6px 15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #8C8C8C;
+.btn-secondary{
+    border-radius: 10px;
 }
-/*.btn:hover {
-	background-color:#4C997E;
-}*/
+
+.btn {
+  	background-color:#4C997E;
+  	-moz-border-radius:0;
+  	-webkit-border-radius:0;
+  	/*border:1px solid #ffffff;*/
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-size:15px;
+  	padding:6px 15px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #8C8C8C;
+}
+
 .btn:active {
-	position:relative;
-	top:1px;
+  	position:relative;
+  	top:1px;
 }
 
 .toggleButton {
-  text-align: center;
-  background-color: grey;
-  padding-left: : 100px;
-  padding-right: 100px;
-  padding-top: 15px;
-  padding-bottom: 15px;
-
+    /*text-align: center;*/
+    background-color: lightgray;
+    padding-left: : 100px;
+    padding-right: 60px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    font-family: 'Heebo', sans-serif;
+    font-size: 14px;
 }
 
+.toggle-title{
+    padding-top: 15px;
+}
+
+#reverseSearchId{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow:inset -1px -1px 12px 0px #42856D;
+    font-family: 'Heebo', sans-serif;
+    font-size: 18px;
+    padding-left: 26px;
+    padding-right: 22px;
+}
+
+#normalSearchId{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow:inset -1px -1px 12px 0px #42856D;
+    font-family: 'Heebo', sans-serif;
+    font-size: 18px;
+    padding-left: 22px;
+    padding-right: 26px;
+}
 
 .buttonSelected {
-  background-color: brown;
-  color: white;
-  text-decoration: none;
-}
-.buttonSelected:focus {
-  color: white;
+    background-color: #4C997E;
+    color: black;
+    text-decoration: none;
+    border:1px solid teal;
+    display:inline-block;
+    cursor:pointer;
 }
 
-/* Styling for scroll to top button*/
-.goToTop {
-    position: fixed;
-    width: 100px;
-    height: 40px;
-    bottom: 0;
-    right: 0;
-    z-index: 100000;
-    cursor: pointer;
-    margin: 10px;
-    background-color: grey;
-    -moz-opacity: 0.90;
-    opacity: .90;
-    filter: alpha(opacity=90);
-    text-align: center;
-    color: white;
+.buttonSelected:focus {
+    color: black;
 }
