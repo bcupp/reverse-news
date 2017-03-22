@@ -264,8 +264,8 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow:inset -1px -1px 12px 0px #42856D;
     font-family: 'Heebo', sans-serif;
     font-size: 18px;
-    padding-left: 26px;
-    padding-right: 22px;
+    padding-left: 56px;
+    padding-right: 52px;
 }
 
 #normalSearchId{
@@ -274,8 +274,8 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow:inset -1px -1px 12px 0px #42856D;
     font-family: 'Heebo', sans-serif;
     font-size: 18px;
-    padding-left: 22px;
-    padding-right: 26px;
+    padding-left: 52px;
+    padding-right: 56px;
 }
 
 .buttonSelected {
