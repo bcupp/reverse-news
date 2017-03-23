@@ -1,10 +1,10 @@
 <nav class="navbar navbar-default searchStyles" role="navigation" ng-controller='controller1'>
 
     <div class="navbar">
-        <form role="search">
+        <form role="search" ng-submit='userSearchNorm(userInput)'>
             <div class="form-group ">
                 <!-- The Revun search bar -->
-                <input type="text" class="form-control " ng-model="userInput" placeholder="Show articles matching your search terms. e.g: apple, facebook"/>
+                <input type="text" class="form-control " ng-model="userInput" placeholder="Show articles matching your search terms. e.g: apple, facebook" ng-keyup="$event.keyCode == 13 && userSearchNorm(userInput)"/>
                 <!--Search buttons-->
                 <button type="button" name="button" class="btn btn-secondary mainButton" ng-click='userSearchNorm(userInput)'>Submit</button>
                 <!-- Button inside of the modal-->
