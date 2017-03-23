@@ -64,25 +64,26 @@
                <h3 class='article-title'><span>{{article.title}}</span></h3>
             </a>
 
-            <!-- Readability modal starts-->
-            <div class="modal fade" id="modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                <div class="modal-dialog modal-lg center-block" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h2 class="modal-title" id="myModalLabel">{{article.title}}</h2>
-                        </div>
-
-                        <div class="modal-body">
-                            <!-- ng-bind takes the string with HTML in it and removes the quotes around the string-->
-                            <div ng-bind-html="wholeArticle"></div>
-                            <a href="{{article.url}}">Source Article</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Readability modal ends-->
           </div>
+
+          <!-- Readability modal starts-->
+          <div class="modal fade" id="modal{{$index}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog modal-lg center-block" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h2 class="modal-title" id="myModalLabel">{{article.title}}</h2>
+                      </div>
+
+                      <div class="modal-body">
+                          <!-- ng-bind takes the string with HTML in it and removes the quotes around the string-->
+                          <div ng-bind-html="wholeArticle"></div>
+                          <a href="{{article.url}}">Source Article</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Readability modal ends-->
         </div>
         <!-- ng-repeat ends-->
     </div>

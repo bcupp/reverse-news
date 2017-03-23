@@ -6,6 +6,10 @@
     font-family: 'Heebo', sans-serif;
 }
 
+body.modal-open div.modal-backdrop {
+    z-index: 0;
+}
+
 html {
     position: relative;
     min-height: 100%;
