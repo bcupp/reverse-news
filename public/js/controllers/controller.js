@@ -14,11 +14,6 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         newsFeed = resultOfPromise;
         newsArray($location.search().q);
     });
-    // Service call to get results from Engadget
-    newService.getNewsEngadget().then(function(resultOfPromise) {
-        newsFeed = newsFeed.concat(resultOfPromise);
-        newsArray($location.search().q);
-    });
     // Service call to get results from four-four-two
     newService.getNewsFour().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);

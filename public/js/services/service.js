@@ -10,7 +10,6 @@ app.factory('newService', function($http) {
     //returning all the functions within service
     return {
         getNewsArsTech: getNewsArsTech,
-        getNewsEngadget:getNewsEngadget,
         getNewsFour:getNewsFour,
         getNewsScientist:getNewsScientist,
         getNewsTechCrunch: getNewsTechCrunch,
@@ -30,17 +29,6 @@ app.factory('newService', function($http) {
         var promise = $http({
             method: 'GET',
             url: 'https://newsapi.org/v1/articles?source=ars-technica&apiKey=7d72f4db8ee04e39a305e785477b413b'
-        }).then(function sucessfullCallback(response) {
-            return newsQueue = response.data.articles;
-        });
-        return promise;
-    };
-
-    //Makes call to newsAPI for Engadget
-    function getNewsEngadget() {
-        var promise = $http({
-            method: 'GET',
-            url: 'https://newsapi.org/v1/articles?source=engadget&apiKey=7d72f4db8ee04e39a305e785477b413b'
         }).then(function sucessfullCallback(response) {
             return newsQueue = response.data.articles;
         });
