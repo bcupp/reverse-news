@@ -6,6 +6,8 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
     var newsFeed;
     //initialized currentView to be used in the toggleView view as a ng-class
     $scope.currentView = '';
+    //declare variable that the reverse and normal search arrays will be stored in
+    $scope.news = {};
 
     // Service call to get results from Tech Crunch
     newService.getNewsTechCrunch().then(function(resultOfPromise) {
@@ -110,6 +112,12 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         //only changes view now
         $location.path('/normalFilter');
         $location.search('q', userInput);
+
+        //alert notifying user that their search does not match any existing articles
+        console.log($scope.news.normFilter.length);
+        if ($scope.news.normFilter.length < 1){
+          alert('No articles matching "'+ userInput+'"');
+        }
     };
 
     //Display results on selected view
