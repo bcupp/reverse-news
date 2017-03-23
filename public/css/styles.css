@@ -6,20 +6,6 @@
     font-family: 'Heebo', sans-serif;
 }
 
-/*body.modal-open div.modal-backdrop {
-    z-index: 0;
-}
-
-.modal {
-  /*position: absolute;*/
-  /*overflow-y: scroll;
-}*/
-
-body.modal-open {
-  overflow: hidden;
-  position: fixed;
-}
-
 html {
     position: relative;
     min-height: 100%;
@@ -88,6 +74,10 @@ body {
 .jumbotron .img-container{
     height: 300%;
     padding-bottom: 10px;
+}
+
+.jumbotron h1{
+  font-size: 87px;
 }
 
 #header-logo{
