@@ -15,6 +15,10 @@ body.modal-open div.modal-backdrop {
   overflow-y: scroll;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 html {
     position: relative;
     min-height: 100%;
