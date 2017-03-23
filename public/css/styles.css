@@ -10,6 +10,11 @@ body.modal-open div.modal-backdrop {
     z-index: 0;
 }
 
+.modal {
+  /*position: absolute;*/
+  overflow-y: scroll;
+}
+
 html {
     position: relative;
     min-height: 100%;
