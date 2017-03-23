@@ -10,9 +10,15 @@ app.factory('newService', function($http) {
     //returning all the functions within service
     return {
         getNewsArsTech: getNewsArsTech,
-        getNewsBloomberg:getNewsBloomberg,
         getNewsEngadget:getNewsEngadget,
+        getNewsFour:getNewsFour,
+        getNewsScientist:getNewsScientist,
         getNewsTechCrunch: getNewsTechCrunch,
+        getNewsGuardianAu: getNewsGuardianAu,
+        getNewsGuardianUk: getNewsGuardianUk,
+        getNewsNextWeb: getNewsNextWeb,
+        getNewsWallStreet: getNewsWallStreet,
+        getNewsWapo: getNewsWapo,
         getReadability: getReadability,
         returnArticle: returnArticle
     }
@@ -30,17 +36,6 @@ app.factory('newService', function($http) {
         return promise;
     };
 
-    //Makes call to newsAPI for Bloomberg
-    function getNewsBloomberg() {
-        var promise = $http({
-            method: 'GET',
-            url: 'https://newsapi.org/v1/articles?source=bloomberg&apiKey=7d72f4db8ee04e39a305e785477b413b'
-        }).then(function sucessfullCallback(response) {
-            return newsQueue = response.data.articles;
-        });
-        return promise;
-    };
-
     //Makes call to newsAPI for Engadget
     function getNewsEngadget() {
         var promise = $http({
@@ -51,7 +46,26 @@ app.factory('newService', function($http) {
         });
         return promise;
     };
-
+    //Makes call to newsAPI for four-four-two
+    function getNewsFour() {
+        var promise = $http({
+            method: 'GET',
+            url: 'https://newsapi.org/v1/articles?source=four-four-two&apiKey=7d72f4db8ee04e39a305e785477b413b'
+        }).then(function sucessfullCallback(response) {
+            return newsQueue = response.data.articles;
+        });
+        return promise;
+    };
+    //Makes call to newsAPI for new-scientist
+    function getNewsScientist() {
+        var promise = $http({
+            method: 'GET',
+            url: 'https://newsapi.org/v1/articles?source=new-scientist&apiKey=7d72f4db8ee04e39a305e785477b413b'
+        }).then(function sucessfullCallback(response) {
+            return newsQueue = response.data.articles;
+        });
+        return promise;
+    };
     //Makes call to newsAPI for techcrunch
     function getNewsTechCrunch() {
         var promise = $http({
@@ -62,8 +76,56 @@ app.factory('newService', function($http) {
         });
         return promise;
     };
-
-
+    //Makes call to newsAPI for the-guardian-au
+    function getNewsGuardianAu() {
+        var promise = $http({
+            method: 'GET',
+            url: 'https://newsapi.org/v1/articles?source=the-guardian-au&apiKey=7d72f4db8ee04e39a305e785477b413b'
+        }).then(function sucessfullCallback(response) {
+            return newsQueue = response.data.articles;
+        });
+        return promise;
+    };
+    //Makes call to newsAPI for the-guardian-uk
+    function getNewsGuardianUk() {
+        var promise = $http({
+            method: 'GET',
+            url: 'https://newsapi.org/v1/articles?source=the-guardian-uk&apiKey=7d72f4db8ee04e39a305e785477b413b'
+        }).then(function sucessfullCallback(response) {
+            return newsQueue = response.data.articles;
+        });
+        return promise;
+    };
+    //Makes call to newsAPI for the-next-web
+    function getNewsNextWeb() {
+        var promise = $http({
+            method: 'GET',
+            url: 'https://newsapi.org/v1/articles?source=the-next-web&apiKey=7d72f4db8ee04e39a305e785477b413b'
+        }).then(function sucessfullCallback(response) {
+            return newsQueue = response.data.articles;
+        });
+        return promise;
+    };
+    //Makes call to newsAPI for the-wall-street-journal
+    function getNewsWallStreet() {
+        var promise = $http({
+            method: 'GET',
+            url: 'https://newsapi.org/v1/articles?source=the-wall-street-journal&apiKey=7d72f4db8ee04e39a305e785477b413b'
+        }).then(function sucessfullCallback(response) {
+            return newsQueue = response.data.articles;
+        });
+        return promise;
+    };
+    //Makes call to newsAPI for the-washington-post
+    function getNewsWapo() {
+        var promise = $http({
+            method: 'GET',
+            url: 'https://newsapi.org/v1/articles?source=the-washington-post&apiKey=7d72f4db8ee04e39a305e785477b413b'
+        }).then(function sucessfullCallback(response) {
+            return newsQueue = response.data.articles;
+        });
+        return promise;
+    };
 
     //Makes call to readability in the server
     function getReadability(url) {

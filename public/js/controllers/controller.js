@@ -14,18 +14,48 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         newsFeed = resultOfPromise;
         newsArray($location.search().q);
     });
-    // Service call to get results from Bloomberg
-    newService.getNewsBloomberg().then(function(resultOfPromise) {
-        newsFeed = newsFeed.concat(resultOfPromise);
-        newsArray($location.search().q);
-    });
     // Service call to get results from Engadget
     newService.getNewsEngadget().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
         newsArray($location.search().q);
     });
+    // Service call to get results from four-four-two
+    newService.getNewsFour().then(function(resultOfPromise) {
+        newsFeed = newsFeed.concat(resultOfPromise);
+        newsArray($location.search().q);
+    });
+    // Service call to get results from New Scientist
+    newService.getNewsScientist().then(function(resultOfPromise) {
+        newsFeed = newsFeed.concat(resultOfPromise);
+        newsArray($location.search().q);
+    });
     // Service call to get results from techcrunch
     newService.getNewsTechCrunch().then(function(resultOfPromise) {
+        newsFeed = newsFeed.concat(resultOfPromise);
+        newsArray($location.search().q);
+    });
+    // Service call to get results from guardianAU
+    newService.getNewsGuardianAu().then(function(resultOfPromise) {
+        newsFeed = newsFeed.concat(resultOfPromise);
+        newsArray($location.search().q);
+    });
+    // Service call to get results from guardianUK
+    newService.getNewsGuardianUk().then(function(resultOfPromise) {
+        newsFeed = newsFeed.concat(resultOfPromise);
+        newsArray($location.search().q);
+    });
+    // Service call to get results from next web
+    newService.getNewsNextWeb().then(function(resultOfPromise) {
+        newsFeed = newsFeed.concat(resultOfPromise);
+        newsArray($location.search().q);
+    });
+    // Service call to get results from Wall Street journal
+    newService.getNewsWallStreet().then(function(resultOfPromise) {
+        newsFeed = newsFeed.concat(resultOfPromise);
+        newsArray($location.search().q);
+    });
+    // Service call to get results from getNewsWallStreet
+    newService.getNewsWapo().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
         newsArray($location.search().q);
     });
