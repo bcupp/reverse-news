@@ -6,17 +6,18 @@
     font-family: 'Heebo', sans-serif;
 }
 
-body.modal-open div.modal-backdrop {
+/*body.modal-open div.modal-backdrop {
     z-index: 0;
 }
 
 .modal {
   /*position: absolute;*/
-  overflow-y: scroll;
-}
+  /*overflow-y: scroll;
+}*/
 
 body.modal-open {
   overflow: hidden;
+  position: fixed;
 }
 
 html {
