@@ -20,7 +20,7 @@ body {
 }
 
 .modal{
-  -webkit-overflow-scrolling:touch;
+  -webkit-overflow-scrolling:auto;
 }
 .row{
   margin-right:0px;
