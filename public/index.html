@@ -11,36 +11,45 @@
 
     <!-- initiated wow animation -->
     <script src="js/wow.min.js"></script>
-    <script> new WOW().init(); </script>
+    <script>
+        new WOW().init();
+    </script>
 
     <title>Revun</title>
     <!-- initiating email per directions from emailjs -->
-      <div ng-controller ="controller1">
-      <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
-      <script type="text/javascript">
-         (function(){
-            emailjs.init("user_Mecn5D2nlXkLiTm3a2uI9");
-         })();
-      </script>
-      </div>
+    <div ng-controller="controller1">
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function() {
+                emailjs.init("user_Mecn5D2nlXkLiTm3a2uI9");
+            })();
+        </script>
+    </div>
 </head>
 
 <body ng-controller='controller1'>
 
     <div class='container-fluid'>
-      <header class = 'header-logo'>
-        <div class = 'row'>
-          <div class = 'small-12 large-3 columns'>
-            <div id = 'header-logo'>
-              <img src = 'img/REVUN1.png' height="80" width="170">
-          </div>
-        </div>
-      </header>
+        <header class='header-logo'>
+            <div class='row'>
+                <div class='small-12 large-3 columns'>
+                    <div id='header-logo'>
+                        <img src='img/REVUN1.png' height="80" width="170">
+                    </div>
+                </div>
+        </header>
 
-        <jumbotron ></jumbotron>
+        <jumbotron></jumbotron>
         <toggle-view></toggle-view>
         <ng-view></ng-view>
+
+
         <bottom-footer></bottom-footer>
+        <div class="scroll-top-wrapper ">
+            <span class="scroll-top-inner glyphicon glyphicon-chevron-up">
+              <!-- <i></i> -->
+            </span>
+        </div>
     </div>
 </body>
 
