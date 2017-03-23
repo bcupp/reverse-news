@@ -6,6 +6,7 @@
     font-family: 'Heebo', sans-serif;
 }
 
+
 html {
     position: relative;
     min-height: 100%;
@@ -304,7 +305,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 /*Scroll to top button styling start */
-.scroll-top-wrapper {
+/*.scroll-top-wrapper {
     position: fixed;
     opacity: 0;
     visibility: hidden;
@@ -324,8 +325,8 @@ h1, h2, h3, h4, h5, h6 {
 	-ms-transition: all 0.5s ease-in-out;
 	-o-transition: all 0.5s ease-in-out;
 	transition: all 0.5s ease-in-out;
-}
-.scroll-top-wrapper:hover {
+}*/
+/*.scroll-top-wrapper:hover {
 	background-color: lightgray;
 }
 .scroll-top-wrapper.show {
@@ -335,7 +336,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .scroll-top-wrapper i.fa {
 	line-height: inherit;
-}
+}*/
 
 
 /*Scroll to top button styling end */
