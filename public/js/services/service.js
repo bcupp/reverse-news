@@ -9,12 +9,48 @@ app.factory('newService', function($http) {
 
     //returning all the functions within service
     return {
-        getNewsTechCrunch: getNewsTechCrunch,
-        getNewsAbcNewsAu: getNewsAbcNewsAu,
         getNewsArsTech: getNewsArsTech,
+        getNewsBloomberg:getNewsBloomberg,
+        getNewsEngadget:getNewsEngadget,
+        getNewsTechCrunch: getNewsTechCrunch,
         getReadability: getReadability,
         returnArticle: returnArticle
     }
+
+
+
+    //Makes call to newsAPI for ArsTech
+    function getNewsArsTech() {
+        var promise = $http({
+            method: 'GET',
+            url: 'https://newsapi.org/v1/articles?source=ars-technica&apiKey=7d72f4db8ee04e39a305e785477b413b'
+        }).then(function sucessfullCallback(response) {
+            return newsQueue = response.data.articles;
+        });
+        return promise;
+    };
+
+    //Makes call to newsAPI for Bloomberg
+    function getNewsBloomberg() {
+        var promise = $http({
+            method: 'GET',
+            url: 'https://newsapi.org/v1/articles?source=bloomberg&apiKey=7d72f4db8ee04e39a305e785477b413b'
+        }).then(function sucessfullCallback(response) {
+            return newsQueue = response.data.articles;
+        });
+        return promise;
+    };
+
+    //Makes call to newsAPI for Engadget
+    function getNewsEngadget() {
+        var promise = $http({
+            method: 'GET',
+            url: 'https://newsapi.org/v1/articles?source=engadget&apiKey=7d72f4db8ee04e39a305e785477b413b'
+        }).then(function sucessfullCallback(response) {
+            return newsQueue = response.data.articles;
+        });
+        return promise;
+    };
 
     //Makes call to newsAPI for techcrunch
     function getNewsTechCrunch() {
@@ -27,27 +63,7 @@ app.factory('newService', function($http) {
         return promise;
     };
 
-    //Makes call to newsAPI for abc-news-au
-    function getNewsAbcNewsAu() {
-        var promise = $http({
-            method: 'GET',
-            url: 'https://newsapi.org/v1/articles?source=abc-news-au&apiKey=7d72f4db8ee04e39a305e785477b413b'
-        }).then(function sucessfullCallback(response) {
-            return newsQueue = response.data.articles;
-        });
-        return promise;
-    };
 
-    //Makes call to newsAPI for ArsTech
-    function getNewsArsTech() {
-        var promise = $http({
-            method: 'GET',
-            url: 'https://newsapi.org/v1/articles?source=ars-technica&apiKey=7d72f4db8ee04e39a305e785477b413b'
-        }).then(function sucessfullCallback(response) {
-            return newsQueue = response.data.articles;
-        });
-        return promise;
-    };
 
     //Makes call to readability in the server
     function getReadability(url) {

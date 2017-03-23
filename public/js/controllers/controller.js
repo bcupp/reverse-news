@@ -7,18 +7,23 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
     //initialized currentView to be used in the toggleView view as a ng-class
     $scope.currentView = '';
 
-    // Service call to get results from Tech Crunch
-    newService.getNewsTechCrunch().then(function(resultOfPromise) {
+    // Service call to get results from Ars Tech
+    newService.getNewsArsTech().then(function(resultOfPromise) {
         newsFeed = resultOfPromise;
         newsArray($location.search().q);
     });
-    // Service call to get results from ABC News AU
-    newService.getNewsAbcNewsAu().then(function(resultOfPromise) {
+    // Service call to get results from Bloomberg
+    newService.getNewsBloomberg().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
         newsArray($location.search().q);
     });
-    // Service call to get results from Ars Tech
-    newService.getNewsArsTech().then(function(resultOfPromise) {
+    // Service call to get results from Engadget
+    newService.getNewsEngadget().then(function(resultOfPromise) {
+        newsFeed = newsFeed.concat(resultOfPromise);
+        newsArray($location.search().q);
+    });
+    // Service call to get results from techcrunch
+    newService.getNewsTechCrunch().then(function(resultOfPromise) {
         newsFeed = newsFeed.concat(resultOfPromise);
         newsArray($location.search().q);
     });
