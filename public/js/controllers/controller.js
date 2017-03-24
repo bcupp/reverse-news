@@ -143,11 +143,6 @@ app.controller('controller1', function($scope, newService, $location, $sce) {
         $location.path('/normalFilter');
         $location.search('q', userInput);
 
-        //alert notifying user that their search does not match any existing articles
-        console.log($scope.news.normFilter.length);
-        if ($scope.news.normFilter.length < 1){
-          alert('No articles matching "'+ userInput+'"');
-        }
     };
 
     //Display results on selected view
